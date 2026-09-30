@@ -43,7 +43,7 @@ export function Header() {
           {/* Brand Logo (Far Left) */}
           <Link href="/" className="flex items-center gap-2 group shrink-0 pr-6">
             <Image
-              src="/brand/ruvia-logo (1).svg"
+              src="/brand/ruvia-logo.svg"
               alt={site.name}
               width={128}
               height={34}
@@ -109,30 +109,26 @@ export function Header() {
                     </ul>
                   </div>
 
-                  <div className="w-48">
-                    <h4 className="text-[10px] font-bold tracking-widest text-white/40 uppercase mb-5">Kebutuhan Digital</h4>
+                  <div className="w-56">
+                    <h4 className="text-[10px] font-bold tracking-widest text-white/40 uppercase mb-5">Layanan Lokasi</h4>
                     <ul className="space-y-4 text-xs">
                       <li>
-                        <a
-                          href={getWhatsAppLink("Halo Ruvia Studios, saya butuh bantuan Optimasi Performa / SEO untuk website saya.")}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <Link
+                          href="/jasa-pembuatan-website-pontianak"
                           className="block group/link"
                         >
-                          <div className="font-bold mb-1 group-hover/link:text-[var(--accent-soft)] transition-colors">Optimasi Performa</div>
-                          <div className="text-[11px] text-white/60 leading-relaxed">Website cepat dan handal.</div>
-                        </a>
+                          <div className="font-bold mb-1 group-hover/link:text-[var(--accent-soft)] transition-colors">Website Pontianak</div>
+                          <div className="text-[11px] text-white/60 leading-relaxed">Spesialis web & sistem di Pontianak.</div>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href={getWhatsAppLink("Halo Ruvia Studios, saya butuh Konsultasi Gratis untuk kebutuhan digital bisnis saya.")}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <Link
+                          href="/jasa-pembuatan-website-surabaya"
                           className="block group/link"
                         >
-                          <div className="font-bold mb-1 group-hover/link:text-[var(--accent-soft)] transition-colors">Konsultasi Gratis</div>
-                          <div className="text-[11px] text-white/60 leading-relaxed">Diskusikan kebutuhan Anda tanpa biaya.</div>
-                        </a>
+                          <div className="font-bold mb-1 group-hover/link:text-[var(--accent-soft)] transition-colors">Website Surabaya</div>
+                          <div className="text-[11px] text-white/60 leading-relaxed">Jasa pembuatan website Surabaya.</div>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -158,16 +154,6 @@ export function Header() {
             >
               Kontak
             </Link>
-
-            <div className="flex items-center gap-1 border-l border-gray-200 pl-5 ml-1">
-              <button className="text-xs font-bold text-[var(--accent-strong)] bg-[var(--accent-soft)] px-2 py-0.5 rounded transition-colors">
-                ID
-              </button>
-              <span className="text-gray-300">/</span>
-              <button className="text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors px-2 py-0.5">
-                EN
-              </button>
-            </div>
           </nav>
 
           {/* Right Action Button */}

@@ -7,6 +7,7 @@ export interface PortfolioProject {
   tagline: string;
   image: string;
   tags: string[];
+  projectStatus: "Proyek Klien (Real Case)" | "Prototipe Internal" | "Demo Konsep";
   sidebar: {
     clientDetail: string;
     location: string;
@@ -43,8 +44,9 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Beauty & Wellness Digital Platform",
     year: "2026",
     tagline: "Platform digital premium untuk beauty & wellness berkonsep slow living dengan alur reservasi instan dan pencarian multi-cabang.",
-    image: "/asset-porto/Gemini_Generated_Image_olme1jolme1jolme.jpg",
+    image: "/asset-porto/hello-friday-booking-surabaya.jpg",
     tags: ["Dark Mode UI", "Multi-Branch Search", "Instant Booking", "Slow Living Concept"],
+    projectStatus: "Proyek Klien (Real Case)",
     demoUrl: "https://whimsical-stardust-cde28a.netlify.app/",
     sidebar: {
       clientDetail: "Hello Friday Studio (Est. 2018)",
@@ -74,7 +76,7 @@ export const portfolioProjects: PortfolioProject[] = [
     },
     showcase: {
       caption: "Tampilan visual antarmuka Hello Friday dengan katalog layanan terintegrasi dan pemilih slot reservasi real-time.",
-      image: "/asset-porto/Gemini_Generated_Image_olme1jolme1jolme.jpg",
+      image: "/asset-porto/hello-friday-booking-surabaya.jpg",
     },
     scopeDemo: {
       overview: "Scope pekerjaan prototipe & demo fungsional yang dikembangkan pada fase ini mencakup:",
@@ -98,8 +100,9 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Outlet Locator & Dynamic Price List",
     year: "2026",
     tagline: "Website interaktif untuk jaringan spesialis Nail Art terjangkau di 15+ lokasi coffee shop & co-working space se-Jawa.",
-    image: "/asset-porto/Gemini_Generated_Image_2ej6jm2ej6jm2ej6.jpg",
+    image: "/asset-porto/kazi-nail-outlet-locator.jpg",
     tags: ["Playful UI", "Outlet Finder", "Dynamic Price List", "Coffee Shop Integration"],
+    projectStatus: "Proyek Klien (Real Case)",
     demoUrl: "https://celadon-caramel-3f9b55.netlify.app/",
     sidebar: {
       clientDetail: "Kazi Nail Beauty Bar (4.4K+ IG Followers)",
@@ -129,7 +132,7 @@ export const portfolioProjects: PortfolioProject[] = [
     },
     showcase: {
       caption: "Showcase antarmuka Kazi dengan fitur pencari outlet coffee shop mitra dan price list transparan.",
-      image: "/asset-porto/Gemini_Generated_Image_2ej6jm2ej6jm2ej6.jpg",
+      image: "/asset-porto/kazi-nail-outlet-locator.jpg",
     },
     scopeDemo: {
       overview: "Scope implementasi untuk demo interaktif Kazi Nail Beauty Bar:",
@@ -148,16 +151,17 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "custom-erp-supply-chain",
     title: "Custom ERP & Supply Chain",
-    client: "Retail & Manufacturing Corp",
+    client: "PT Lintas Samudera Jaya Express (LSJ)",
     category: "Enterprise System & Operations",
     year: "2026",
     tagline: "Sistem manajemen sumber daya perusahaan terpadu untuk efisiensi inventaris, alur kerja operasional, dan otomatisasi laporan keuangan.",
     image: "/asset-porto/erp_showcase.png",
     tags: ["Enterprise ERP", "Inventory Control", "Financial Reports", "Role Management"],
+    projectStatus: "Proyek Klien (Real Case)",
     sidebar: {
-      clientDetail: "Distributor & Manufaktur Multinasional",
-      location: "Jakarta & Surabaya",
-      categoryDetail: "Sistem Informasi Manajemen Operasional",
+      clientDetail: "PT Lintas Samudera Jaya Express (LSJ)",
+      location: "Surabaya & Jakarta",
+      categoryDetail: "Sistem Informasi Manajemen Operasional & Logistik Ekspedisi",
       positioning: "Efisiensi Operasional Terpusat & Real-time Analytics",
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Recharts"],
       tone: "Profesional, High-Security, Data-Dense, Analytical",
@@ -183,7 +187,7 @@ export const portfolioProjects: PortfolioProject[] = [
       image: "/asset-porto/erp_showcase.png",
     },
     scopeDemo: {
-      overview: "Fitur utama yang diimplementasikan pada showcase ini:",
+      overview: "Fitur utama yang diimplementasikan pada studi kasus ini:",
       points: [
         "Dashboard overview keuangan dan statistik penjualan harian.",
         "Modul tabel manajemen inventaris dengan penyaringan data cepat.",
@@ -198,16 +202,17 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "logistics-freight-tracking",
     title: "Logistics & Freight Tracking",
-    client: "TransLogistics Asia",
+    client: "Ruvia Concept Lab",
     category: "Logistics & Fleet Management",
     year: "2026",
     tagline: "Landing page interaktif & portal pelacakan armada pengiriman barang real-time dengan kalkulator tarif otomatis.",
     image: "/asset-porto/logistics_showcase.png",
     tags: ["Real-time Tracking", "Rate Calculator", "Fleet Management", "Interactive Map"],
+    projectStatus: "Demo Konsep",
     sidebar: {
-      clientDetail: "TransLogistics Asia",
-      location: "Indonesia & Singapura",
-      categoryDetail: "Transportasi & Ekspedisi Kargo",
+      clientDetail: "Ruvia Concept Lab (Demo Showcase)",
+      location: "Indonesia",
+      categoryDetail: "Transportasi & Ekspedisi Kargo (Demo Konsep)",
       positioning: "Kecepatan, Transparansi Tarif, & Pelacakan Presisi",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Mapbox API", "WebSocket"],
       tone: "Moderen, High-Tech, Trusted, Dynamic",
@@ -247,15 +252,16 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "executive-company-profile",
     title: "Executive Company Profile",
-    client: "Vanguard Capital Partners",
+    client: "Ruvia Design Showcase",
     category: "Corporate & Investment Portal",
     year: "2026",
     tagline: "Company profile premium dengan animasi mikro modern, integrasi katalog produk, dan formulir konsultasi instan.",
     image: "/asset-porto/corporate_showcase.png",
     tags: ["Interactive UI", "Brand Identity", "Lead Generation", "Executive Design"],
+    projectStatus: "Demo Konsep",
     sidebar: {
-      clientDetail: "Vanguard Capital Partners",
-      location: "Jakarta Selatan",
+      clientDetail: "Ruvia Corporate Showcase",
+      location: "Jakarta & Surabaya",
       categoryDetail: "Investasi & Konsultan Bisnis Korporat",
       positioning: "Kepercayaan Eksklusif & Portofolio Investasi Berkelas",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -295,16 +301,17 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "smart-crm-client-portal",
     title: "Smart CRM & Client Portal",
-    client: "Apex Growth Agency",
+    client: "Ruvia Internal Lab",
     category: "SaaS & Client Management",
     year: "2026",
     tagline: "Platform CRM terpusat untuk memantau siklus pelanggan, pipeline penjualan, dan manajemen tiket dukungan layanan.",
     image: "/asset-porto/crm_showcase.png",
     tags: ["Sales Pipeline", "Customer Insights", "Ticket Management", "Dark Mode SaaS"],
+    projectStatus: "Prototipe Internal",
     sidebar: {
-      clientDetail: "Apex Growth Agency",
-      location: "Bali & Remote",
-      categoryDetail: "Software SaaS Manajemen Pelanggan",
+      clientDetail: "Ruvia Internal Lab (Demo Project)",
+      location: "Surabaya & Remote",
+      categoryDetail: "Software SaaS Manajemen Pelanggan (Internal Prototype)",
       positioning: "Visibilitas Deal Penjualan & Retensi Pelanggan Maksimal",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
       tone: "Futuristik, Produktif, Intuitif, Modern UI",

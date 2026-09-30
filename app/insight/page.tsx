@@ -1,59 +1,117 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { site } from "@/lib/site";
+import { getAllInsights } from "@/lib/insight-data";
 import { Reveal } from "@/components/ui/Reveal";
 
+const PAGE_URL = `${site.url}/insight`;
+
 export const metadata: Metadata = {
-  title: "Insight",
-  description: "Artikel, insight, dan pemikiran seputar pengembangan produk digital.",
+  title: "Insight & Panduan Digital Bisnis | Ruvia Studios",
+  description:
+    "Kumpulan artikel, studi kasus, dan panduan teknis seputar pembuatan website, software ERP, dan strategi digital marketing dari engineer Ruvia Studios.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Insight & Panduan Digital Bisnis | Ruvia Studios",
+    description:
+      "Kumpulan artikel, studi kasus, dan panduan teknis seputar pembuatan website, software ERP, dan strategi digital marketing dari engineer Ruvia Studios.",
+    url: PAGE_URL,
+  },
 };
 
-export default function InsightPage() {
-  const articles = [
-    {
-      title: "Apakah Single Page Application (SPA) Masih Layak untuk Frontend Modern?",
-      date: "20 Sep 2026",
-    },
-    {
-      title: "Menghitung ROI dari Investasi Custom Business System",
-      date: "14 Sep 2026",
-    },
-    {
-      title: "Kerentanan Keamanan pada Komponen Frontend dan Cara Mencegahnya",
-      date: "7 Sep 2026",
-    },
-    {
-      title: "Mengapa Bisnis Lokal Membutuhkan Landing Page yang Terstruktur",
-      date: "31 Agu 2026",
-    },
-  ];
+export default function InsightIndexPage() {
+  const articles = getAllInsights();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Beranda",
+            item: site.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Insight",
+            item: PAGE_URL,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
-    <div className="bg-[var(--ink)] min-h-screen text-white pt-24 pb-32">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+    <main className="bg-[var(--bg)] min-h-screen pt-28 pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <Reveal>
-          <h1 className="text-[clamp(2.5rem,4vw+1rem,3.5rem)] font-bold tracking-tight mb-16">
-            Insight & Artikel
-          </h1>
+          <header className="mb-16 text-center">
+            <h1 className="text-[clamp(2.5rem,4vw+1rem,4rem)] font-extrabold leading-tight text-[var(--ink)] mb-4 tracking-tight">
+              Kumpulan <span className="text-[var(--accent)]">Insight</span>
+            </h1>
+            <p className="text-lg text-[var(--ink-muted)] max-w-2xl mx-auto">
+              Panduan jujur dan studi kasus teknis seputar digitalisasi bisnis, pembuatan website, dan pengembangan *software* dari meja *engineer* kami.
+            </p>
+          </header>
         </Reveal>
 
-        <div className="flex flex-col">
-          {articles.map((article, idx) => (
-            <Reveal key={idx} delay={0.1 * idx}>
-              <a 
-                href="#" 
-                className="group flex flex-col md:flex-row md:items-center justify-between py-10 border-t border-white/10 hover:bg-white/[0.02] transition-colors -mx-5 px-5 sm:-mx-8 sm:px-8"
-              >
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-0 max-w-2xl group-hover:text-[var(--accent-soft)] transition-colors leading-tight">
-                  {article.title}
-                </h2>
-                <div className="text-white/40 text-sm font-medium whitespace-nowrap">
-                  {article.date}
-                </div>
-              </a>
-            </Reveal>
-          ))}
-          <div className="border-t border-white/10"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((article, idx) => {
+            const dateObj = new Date(article.publishedAt);
+            const formattedDate = new Intl.DateTimeFormat("id-ID", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            }).format(dateObj);
+
+            return (
+              <Reveal key={article.slug} delay={0.1 * idx}>
+                <Link href={`/insight/${article.slug}`} className="group block h-full">
+                  <article className="bg-[var(--surface)] border border-[var(--line)] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[var(--accent)] h-full flex flex-col">
+                    <div className="aspect-[16/9] w-full overflow-hidden bg-[var(--surface-alt)] relative border-b border-[var(--line)]">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute top-3 left-3 bg-[var(--surface)]/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[var(--ink)]">
+                        {article.category}
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <time className="text-xs text-[var(--ink-muted)] mb-3 block font-semibold">
+                        {formattedDate}
+                      </time>
+                      <h2 className="text-xl font-bold text-[var(--ink)] mb-3 leading-snug group-hover:text-[var(--accent)] transition-colors">
+                        {article.title}
+                      </h2>
+                      <p className="text-sm text-[var(--ink-muted)] leading-relaxed line-clamp-3 mb-6 flex-grow">
+                        {article.description}
+                      </p>
+                      <div className="text-[var(--accent)] text-sm font-semibold mt-auto inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Baca Selengkapnya <span>&rarr;</span>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

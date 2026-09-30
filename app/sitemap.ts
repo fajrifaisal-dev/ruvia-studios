@@ -1,67 +1,76 @@
 import { MetadataRoute } from 'next';
 import { site } from '@/lib/site';
 import { getAllProjects } from '@/lib/portfolio-data';
+import { getAllInsights } from '@/lib/insight-data';
+
+
+// Tanggal update terakhir per halaman (diisi manual saat ada perubahan konten)
+const LAST_MODIFIED = {
+  home:       new Date('2026-09-30'),
+  surabaya:   new Date('2026-09-30'),
+  pontianak:  new Date('2026-09-30'),
+  portfolio:  new Date('2026-09-30'),
+  insight:    new Date('2026-09-30'),
+  contact:    new Date('2026-09-30'),
+  terms:      new Date('2026-06-01'),
+  privacy:    new Date('2026-06-01'),
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projects = getAllProjects();
 
   const portfolioRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${site.url}/portfolio/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.8,
+    lastModified: LAST_MODIFIED.portfolio,
   }));
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: site.url,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
+      lastModified: LAST_MODIFIED.home,
     },
     {
       url: `${site.url}/jasa-pembuatan-website-pontianak`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      lastModified: LAST_MODIFIED.pontianak,
     },
     {
       url: `${site.url}/jasa-pembuatan-website-surabaya`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      lastModified: LAST_MODIFIED.surabaya,
     },
     {
       url: `${site.url}/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      lastModified: LAST_MODIFIED.portfolio,
     },
     {
       url: `${site.url}/insight`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
+      lastModified: LAST_MODIFIED.insight,
     },
     {
       url: `${site.url}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      lastModified: LAST_MODIFIED.contact,
     },
     {
       url: `${site.url}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      lastModified: LAST_MODIFIED.terms,
     },
     {
       url: `${site.url}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      lastModified: LAST_MODIFIED.privacy,
+    },
+    {
+      url: `${site.url}/website-salon-kecantikan-surabaya`,
+      lastModified: LAST_MODIFIED.surabaya,
+    },
+    {
+      url: `${site.url}/sistem-manajemen-logistik-surabaya`,
+      lastModified: LAST_MODIFIED.surabaya,
     },
   ];
 
-  return [...staticRoutes, ...portfolioRoutes];
+  const insightRoutes: MetadataRoute.Sitemap = getAllInsights().map((i) => ({
+    url: `${site.url}/insight/${i.slug}`,
+    lastModified: new Date(i.updatedAt),
+  }));
+
+  return [...staticRoutes, ...portfolioRoutes, ...insightRoutes];
 }

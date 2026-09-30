@@ -25,17 +25,6 @@ export const metadata: Metadata = {
   description:
     "Jasa pembuatan website profesional, landing page SEO, dan sistem bisnis custom di Pontianak & Surabaya. Ditangani langsung oleh Software Engineer.",
   metadataBase: new URL(site.url),
-  keywords: [
-    "Jasa Pembuatan Website",
-    "Jasa Website Pontianak",
-    "Jasa Website Surabaya",
-    "Web Developer Pontianak",
-    "Web Developer Surabaya",
-    "Software House Indonesia",
-    "Sistem Bisnis Custom",
-    "Website Landing Page",
-    "Company Profile Website",
-  ],
   authors: [{ name: "Ruvia Studios" }],
   creator: "Ruvia Studios",
   openGraph: {
@@ -48,10 +37,10 @@ export const metadata: Metadata = {
     siteName: site.name,
     images: [
       {
-        url: "/asset-porto/corporate_showcase.png",
+        url: "/brand/ruvia-og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "Ruvia Studios - Jasa Pembuatan Website & Sistem Bisnis",
+        alt: "Ruvia Studios – Jasa Pembuatan Website & Sistem Bisnis di Pontianak dan Surabaya",
       },
     ],
   },
@@ -60,7 +49,7 @@ export const metadata: Metadata = {
     title: "Jasa Pembuatan Website & Sistem Bisnis | Ruvia Studios",
     description:
       "Website cepat, modern, dan SEO-friendly di Pontianak & Surabaya. Ditangani langsung oleh Software Engineer.",
-    images: ["/asset-porto/corporate_showcase.png"],
+    images: ["/brand/ruvia-og-cover.jpg"],
     creator: "@ruviastudios",
   },
   icons: {

@@ -1,120 +1,70 @@
-import { site } from "@/lib/site";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, Star, ArrowRight, Monitor, Code, Settings, Plus } from "lucide-react";
+import { CheckCircle2, Monitor, Settings, Plus } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { DeviceFrame } from "@/components/ui/DeviceFrame";
+import { PortfolioScrollMosaic } from "@/components/ui/PortfolioScrollMosaic";
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section — Split Screen Premium */}
-      <section className="relative overflow-hidden bg-[var(--bg)] pt-20 pb-0 md:pt-28">
-        {/* Decorative Background */}
-        <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:28px_28px]"></div>
-        <div className="absolute left-1/4 top-0 -z-10 h-[400px] w-[400px] rounded-full bg-[var(--accent)] opacity-10 blur-[120px]"></div>
-        <div className="absolute right-1/4 top-1/2 -z-10 h-[300px] w-[300px] rounded-full bg-purple-400 opacity-10 blur-[100px]"></div>
-        
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[85vh]">
-            {/* Left: CTA */}
-            <div className="flex flex-col items-start text-left py-12 pb-10 lg:py-0">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-[var(--ink)] min-h-[95svh] flex flex-col justify-center pt-24 lg:pt-28">
+        {/* Subtle grid texture */}
+        <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[var(--accent)] opacity-[0.04] blur-[120px] pointer-events-none"></div>
+
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 relative z-10 w-full pb-14 lg:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-12 items-center">
+
+            {/* LEFT: Headline + CTA */}
+            <div className="flex flex-col items-start">
               <Reveal>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--accent-soft)] border border-[var(--accent)]/30 text-sm font-semibold text-[var(--accent-strong)] mb-8 tracking-wide">
-                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
-                  Buka Proyek Baru · Respons Cepat
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] font-semibold text-white/60 mb-8 tracking-widest uppercase w-fit">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Open for Projects · Fast Response
                 </div>
               </Reveal>
-              
-              <Reveal delay={0.1}>
-                <h1 className="text-[clamp(2.4rem,4.5vw+1rem,4.2rem)] font-extrabold leading-[1.08] tracking-tight text-[var(--ink)] mb-6">
-                  Jasa Pembuatan Website &{" "}
-                  <span className="relative inline-block">
-                    <span className="text-[var(--accent)]">Sistem Bisnis Profesional</span>
-                    <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 300 8" fill="none">
-                      <path d="M1 5.5C50 2 100 1 150 3.5C200 6 250 7 299 5.5" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeOpacity="0.5"/>
-                    </svg>
-                  </span>
+
+              <Reveal delay={0.05}>
+                <h1 className="text-[clamp(2.4rem,3.8vw+1rem,4.5rem)] font-black leading-[0.93] tracking-[-0.03em] text-white mb-6">
+                  Solusi website<br />&amp; sistem digital<br />
+                  <span className="text-[var(--accent)] italic">untuk perusahaan.</span>
                 </h1>
               </Reveal>
-              
-              <Reveal delay={0.2}>
-                <p className="text-lg md:text-xl text-[var(--ink-muted)] mb-10 leading-relaxed font-medium max-w-xl">
-                  Website cepat, modern, dan SEO-friendly berbasis di Pontianak & Surabaya. Ditangani langsung oleh Software Engineer tanpa perantara.
+
+              <Reveal delay={0.15}>
+                <p className="text-[15px] md:text-base text-white/50 mb-8 leading-relaxed font-medium max-w-[480px]">
+                  Kami membangun website modern, sistem manajemen bisnis, dan aplikasi custom yang menopang pertumbuhan perusahaan Anda — dari Pontianak &amp; Surabaya.
                 </p>
               </Reveal>
-              
-              <Reveal delay={0.3}>
-                <div className="flex flex-col sm:flex-row items-start gap-4 mb-10">
+
+              <Reveal delay={0.22}>
+                <div className="flex flex-col sm:flex-row items-start gap-3 mb-8">
                   <a href={getWhatsAppLink("Halo Ruvia Studios, saya mau berkonsultasi mengenai pembuatan website/sistem untuk bisnis saya.")} target="_blank" rel="noopener noreferrer">
-                    <button className="h-14 px-8 text-base bg-[var(--accent-strong)] hover:bg-[var(--accent-hover)] text-white font-bold rounded-xl inline-flex items-center gap-2 shadow-2xl shadow-[var(--accent)]/30 hover:scale-105 hover:shadow-[var(--accent)]/50 transition-all duration-300">
-                      Konsultasi Gratis via WhatsApp
-                      <ArrowRight className="w-5 h-5" />
+                    <button className="h-12 px-7 text-sm bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-bold rounded-lg inline-flex items-center gap-2 shadow-xl shadow-[var(--accent)]/20 hover:shadow-[var(--accent)]/40 hover:scale-105 transition-all duration-200">
+                      Konsultasi Gratis
                     </button>
                   </a>
                   <a href="/portfolio">
-                    <button className="h-14 px-8 text-base bg-[var(--surface)] hover:bg-[var(--surface-alt)] text-[var(--ink)] font-semibold rounded-xl inline-flex items-center gap-2 border border-[var(--line)] hover:border-[var(--ink-muted)] transition-all duration-300">
-                      Lihat Portofolio
+                    <button className="h-12 px-7 text-sm bg-transparent hover:bg-white/5 text-white/70 hover:text-white font-semibold rounded-lg inline-flex items-center gap-2 border border-white/15 hover:border-white/30 transition-all duration-200">
+                      Lihat Studi Kasus
                     </button>
                   </a>
                 </div>
               </Reveal>
 
-              <Reveal delay={0.4}>
-                <div className="flex flex-wrap items-center gap-6 text-sm text-[var(--ink-muted)] py-6 border-t border-b border-[var(--line)] w-full">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span className="font-medium">Estimasi 1–2 Minggu</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span className="font-medium">Pontianak & Surabaya</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span className="font-medium">Ditangani Langsung Engineer</span>
-                  </div>
-                </div>
+              <Reveal delay={0.28}>
+                <p className="text-xs text-white/30 font-medium">
+                  ★ Untuk UMKM, startup, retail, hospitality, dan perusahaan Indonesia
+                </p>
               </Reveal>
             </div>
 
-            {/* Right: Real Demo Showcase with DeviceFrame */}
-            <Reveal delay={0.35}>
-              <div className="relative flex items-center justify-center pb-8 lg:pb-0">
-                <div className="w-full max-w-[500px]">
-                  <DeviceFrame type="browser" url="demo-hellofriday.ruviastudios.site" title="Hello Friday Studio — Demo">
-                    <div className="p-6 bg-[var(--bg)] text-left">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-xs font-bold px-3 py-1 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 rounded-full">
-                          Demo / Preview Fungsional
-                        </span>
-                        <span className="text-xs text-[var(--ink-muted)]">Surabaya & Malang</span>
-                      </div>
-                      <h3 className="text-xl font-bold text-[var(--ink)] mb-2">Hello Friday — Slow Living Beauty</h3>
-                      <p className="text-sm text-[var(--ink-muted)] mb-4 line-clamp-2">
-                        Portal reservasi studio kecantikan terpusat dengan katalog layanan interaktif & pemilih slot jam kosong instan.
-                      </p>
-                      <div className="flex items-center gap-3">
-                        <a
-                          href="https://whimsical-stardust-cde28a.netlify.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[var(--accent-strong)] px-4 py-2 rounded-lg hover:bg-[var(--accent-hover)] transition-colors"
-                        >
-                          Lihat Demo Live ↗
-                        </a>
-                        <a
-                          href="/portfolio/hello-friday"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--ink-muted)] hover:text-[var(--ink)] transition-colors"
-                        >
-                          Detail Scope →
-                        </a>
-                      </div>
-                    </div>
-                  </DeviceFrame>
-                </div>
-              </div>
+            {/* RIGHT: Portfolio Scroll Mosaic */}
+            <Reveal delay={0.18}>
+              <PortfolioScrollMosaic />
             </Reveal>
+
           </div>
         </div>
       </section>

@@ -24,12 +24,13 @@ export function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4 text-sm tracking-wider uppercase text-[var(--ink-muted)]">Navigation</h4>
+            <h4 className="font-semibold mb-4 text-sm tracking-wider uppercase text-[var(--ink-muted)]">Navigasi & Layanan</h4>
             <ul className="space-y-3">
-              <li><Link href="/" className="text-sm hover:text-[var(--accent)] transition-colors">Home</Link></li>
-              <li><Link href="/contact" className="text-sm hover:text-[var(--accent)] transition-colors">Contact</Link></li>
-              <li><Link href="/terms" className="text-sm hover:text-[var(--accent)] transition-colors">Terms</Link></li>
-              <li><Link href="/privacy" className="text-sm hover:text-[var(--accent)] transition-colors">Privacy</Link></li>
+              <li><Link href="/" className="text-sm hover:text-[var(--accent)] transition-colors">Beranda</Link></li>
+              <li><Link href="/portfolio" className="text-sm hover:text-[var(--accent)] transition-colors">Portofolio</Link></li>
+              <li><Link href="/jasa-pembuatan-website-pontianak" className="text-sm hover:text-[var(--accent)] transition-colors">Website Pontianak</Link></li>
+              <li><Link href="/jasa-pembuatan-website-surabaya" className="text-sm hover:text-[var(--accent)] transition-colors">Website Surabaya</Link></li>
+              <li><Link href="/contact" className="text-sm hover:text-[var(--accent)] transition-colors">Kontak</Link></li>
             </ul>
           </div>
           

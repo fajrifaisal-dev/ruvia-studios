@@ -27,20 +27,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const pageUrl = `${site.url}/portfolio/${slug}`;
+  const imageAlt = `${project.title} – Studi Kasus Ruvia Studios: ${project.tagline.slice(0, 80)}`;
+
   return {
-    title: `${project.title} - Case Study`,
+    title: `${project.title} – Case Study`,
     description: project.tagline,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      title: `${project.title} - Ruvia Studios Case Study`,
+      type: "article",
+      url: pageUrl,
+      title: `${project.title} – Ruvia Studios Case Study`,
       description: project.tagline,
       images: [
         {
           url: project.image,
           width: 1200,
           height: 630,
-          alt: project.title,
+          alt: imageAlt,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} – Ruvia Studios Case Study`,
+      description: project.tagline,
+      images: [project.image],
     },
   };
 }
@@ -53,12 +67,31 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const pageUrl = `${site.url}/portfolio/${slug}`;
   const waMessage = encodeURIComponent(
     `Halo Ruvia Studios, saya tertarik mendiskusikan proyek serupa dengan ${project.title}. Boleh minta jadwal konsultasinya?`
   );
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Beranda", item: site.url },
+          { "@type": "ListItem", position: 2, name: "Portfolio", item: `${site.url}/portfolio` },
+          { "@type": "ListItem", position: 3, name: project.title, item: pageUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="bg-[var(--ink)] min-h-screen text-white pt-28 pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         {/* Top Header / Breadcrumb */}
         <Reveal>
@@ -208,7 +241,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                 <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 group">
                   <img
                     src={project.showcase.image}
-                    alt={project.title}
+                    alt={`${project.title} – tampilan antarmuka proyek Ruvia Studios`}
                     className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700"
                   />
                 </div>

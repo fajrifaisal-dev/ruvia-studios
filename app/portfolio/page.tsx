@@ -15,10 +15,13 @@ export default function PortfolioPage() {
     <div className="bg-[var(--ink)] min-h-screen text-white pt-24 pb-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-24">
-            <h1 className="text-xl md:text-2xl text-[var(--line)] leading-relaxed font-medium">
-              Menjelajahi implementasi nyata dari desain dan rekayasa perangkat lunak untuk menyelesaikan tantangan bisnis klien kami di Indonesia.
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+              Portofolio
             </h1>
+            <p className="text-base md:text-lg text-[var(--line)] leading-relaxed font-medium max-w-2xl mx-auto">
+              Studi kasus dan implementasi nyata rekayasa perangkat lunak untuk menyelesaikan tantangan bisnis klien kami di Indonesia.
+            </p>
           </div>
         </Reveal>
 

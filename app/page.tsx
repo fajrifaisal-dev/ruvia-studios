@@ -272,25 +272,25 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal>
             <div className="text-center mb-16">
-              <h2 className="text-[clamp(2rem,3vw+1rem,3rem)] font-bold leading-tight text-[var(--ink)] mb-4 tracking-tight">Our Approach</h2>
+              <h2 className="text-[clamp(2rem,3vw+1rem,3rem)] font-bold leading-tight text-[var(--ink)] mb-4 tracking-tight">Pendekatan Kami</h2>
               <p className="text-lg text-[var(--ink-muted)] leading-relaxed max-w-2xl mx-auto">
-                From researching business needs to a ready-to-use website or system.
+                Dari riset kebutuhan bisnis hingga website atau sistem digital yang siap pakai.
               </p>
             </div>
           </Reveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { num: "01", title: "Understand", desc: "Understanding your business needs, audience, and current problems." },
-              { num: "02", title: "Plan", desc: "Defining the right solution, structure, and setting a clear scope." },
-              { num: "03", title: "Build", desc: "Developing the system reliably, responsively, and practically." },
-              { num: "04", title: "Launch", desc: "Deploying it properly with SEO optimization and handing it over." }
+              { num: "01", title: "Pahami (Understand)", desc: "Memahami tujuan bisnis, target audiens, dan tantangan yang ingin Anda selesaikan." },
+              { num: "02", title: "Perencanaan (Plan)", desc: "Menentukan solusi terbaik, alur informasi, dan menetapkan scope kerja yang jelas." },
+              { num: "03", title: "Pengembangan (Build)", desc: "Membangun sistem dengan cepat, responsif, aman, dan berorientasi pada kemudahan pengguna." },
+              { num: "04", title: "Peluncuran (Launch)", desc: "Deploy ke domain resmi, optimasi SEO dasar, dan serah terima penggunaan lengkap." }
             ].map((step, idx) => (
               <Reveal key={step.num} delay={idx * 0.1}>
                 <div className="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--line)] shadow-sm relative overflow-hidden group h-full">
                   <div className="text-6xl font-black text-[var(--bg)] absolute -top-2 -right-4 group-hover:scale-110 group-hover:text-[var(--accent-soft)] transition-all duration-500 z-0">{step.num}</div>
                   <div className="relative z-10">
-                    <div className="text-sm font-bold text-[var(--accent-strong)] mb-2 uppercase tracking-widest">{step.num} Step</div>
+                    <div className="text-sm font-bold text-[var(--accent-strong)] mb-2 uppercase tracking-widest">Tahap {step.num}</div>
                     <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                     <p className="text-[var(--ink-muted)] leading-relaxed">{step.desc}</p>
                   </div>
@@ -306,9 +306,9 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal>
             <div className="mb-16 text-center max-w-2xl mx-auto">
-              <h2 className="text-[clamp(2rem,3vw+1rem,3rem)] font-bold leading-tight text-[var(--ink)] mb-4 tracking-tight">Pricing</h2>
+              <h2 className="text-[clamp(2rem,3vw+1rem,3rem)] font-bold leading-tight text-[var(--ink)] mb-4 tracking-tight">Harga & Paket Transparan</h2>
               <p className="text-lg text-[var(--ink-muted)]">
-                Clear requirements; agree on scope, timeline, and costs before development begins.
+                Scope jelas, estimasi tepat, dan biaya disepakati di awal sebelum pengerjaan dimulai.
               </p>
             </div>
           </Reveal>
@@ -318,19 +318,27 @@ export default function Home() {
               <div className="bg-[var(--surface)] rounded-3xl border border-[var(--line)] p-10 shadow-sm flex flex-col h-full hover:border-[var(--ink-muted)] transition-colors">
                 <h3 className="text-3xl font-bold mb-2">Website Starter</h3>
                 <p className="text-[var(--ink-muted)] mb-8 text-lg">
-                  A practical starting point for businesses that need a professional online presence.
+                  Solusi cepat & praktis untuk bisnis yang baru mulai tampil profesional online.
                 </p>
-                <div className="text-4xl font-black text-[var(--ink)] mb-8">Rp1 Juta</div>
+                <div className="text-4xl font-black text-[var(--ink)] mb-8">Rp1.000.000</div>
                 <ul className="space-y-4 mb-10 flex-grow text-lg">
-                  {["Responsive design", "Business information", "WhatsApp integration", "Basic SEO", "Performance optimization", "Deployment"].map((item, i) => (
+                  {[
+                    "Website 1 Halaman (Landing Page)",
+                    "Domain & Hosting sudah termasuk",
+                    "SSL (HTTPS) Keamanan Gratis",
+                    "Tombol & Integrasi WhatsApp CTA",
+                    "Google Maps & Form Kontak",
+                    "Desain Mobile Friendly & Cepat",
+                    "Optimasi SEO Dasar On-Page"
+                  ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-[var(--ink)] font-medium">
                       <CheckCircle2 className="w-6 h-6 text-[var(--success)] shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <a href={getWhatsAppLink("Halo Ruvia Studios, saya tertarik dengan Website Starter untuk bisnis saya.")} target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <Button variant="secondary" className="w-full h-14 text-lg border-2 border-[var(--line)]">Choose Starter</Button>
+                <a href={getWhatsAppLink("Halo Ruvia Studios, saya tertarik dengan Website Starter Rp1.000.000 untuk bisnis saya.")} target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <Button variant="secondary" className="w-full h-14 text-lg border-2 border-[var(--line)]">Pilih Paket Starter</Button>
                 </a>
               </div>
             </Reveal>
@@ -338,23 +346,30 @@ export default function Home() {
             <Reveal delay={0.2}>
               <div className="bg-[var(--ink)] text-white rounded-3xl p-10 shadow-xl flex flex-col relative overflow-hidden h-full">
                 <div className="absolute top-0 right-0 bg-[var(--accent)] text-white text-sm font-bold uppercase tracking-widest px-5 py-2 rounded-bl-xl">
-                  Popular
+                  Rekomendasi
                 </div>
-                <h3 className="text-3xl font-bold mb-2">Custom Solutions</h3>
+                <h3 className="text-3xl font-bold mb-2">Sistem & Web Custom</h3>
                 <p className="text-[var(--line)] mb-8 text-lg">
-                  Need something beyond a company profile? We can build complex business systems.
+                  Butuh lebih dari sekadar company profile? Kami bangun sistem bisnis & aplikasi custom.
                 </p>
-                <div className="text-4xl font-black text-white mb-8">Custom Quote</div>
+                <div className="text-4xl font-black text-white mb-8">Custom Scope</div>
                 <ul className="space-y-4 mb-10 flex-grow text-lg">
-                  {["Custom websites & dashboards", "CRM & Booking systems", "Business applications", "ERP modules", "API integrations", "Maintenance & support"].map((item, i) => (
+                  {[
+                    "Website multi-halaman & Dashboard custom",
+                    "Sistem CRM, Kasir POS & Booking",
+                    "Aplikasi web manajemen bisnis",
+                    "Modul ERP & Inventaris Gudang",
+                    "Integrasi API & Payment Gateway",
+                    "Dukungan teknis & Maintenance"
+                  ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-white font-medium">
                       <CheckCircle2 className="w-6 h-6 text-[var(--accent-soft)] shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <Button className="w-full h-14 text-lg bg-[var(--accent-strong)] hover:bg-[var(--accent-hover)] text-white border-0">Discuss a Project</Button>
+                <a href={getWhatsAppLink("Halo Ruvia Studios, saya ingin berkonsultasi mengenai pembuatan sistem / web custom untuk bisnis saya.")} target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <Button className="w-full h-14 text-lg bg-[var(--accent-strong)] hover:bg-[var(--accent-hover)] text-white border-0">Diskusi Proyek Custom</Button>
                 </a>
               </div>
             </Reveal>

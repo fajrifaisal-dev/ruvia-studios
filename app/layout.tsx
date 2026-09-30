@@ -55,6 +55,9 @@ export const metadata: Metadata = {
     shortcut: "/brand/ruvia-icon.svg",
     apple: "/brand/ruvia-icon.svg",
   },
+  verification: {
+    google: "YvG1uuhEkpnkvEcqcKqSZFBZZQqOnFZH7BLUYbyIzLA",
+  },
 };
 
 export default function RootLayout({

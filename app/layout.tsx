@@ -50,6 +50,11 @@ export const metadata: Metadata = {
     images: ["/asset-porto/corporate_showcase.png"],
     creator: "@ruviastudios",
   },
+  icons: {
+    icon: [{ url: "/brand/ruvia-icon.svg", type: "image/svg+xml" }],
+    shortcut: "/brand/ruvia-icon.svg",
+    apple: "/brand/ruvia-icon.svg",
+  },
 };
 
 export default function RootLayout({

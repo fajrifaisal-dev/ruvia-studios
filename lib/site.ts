@@ -1,7 +1,7 @@
 export const site = {
   name: "Ruvia Studios",
   tagline: "Digital solutions for growing businesses.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ruviastudios.com", // update later
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ruviastudios.site",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@ruviastudios.com",
   whatsapp: {
     number: "6289639873022",

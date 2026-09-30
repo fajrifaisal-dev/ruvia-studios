@@ -24,6 +24,32 @@ export const metadata: Metadata = {
   },
   description: site.tagline,
   metadataBase: new URL(site.url),
+  keywords: ["Software House", "Jasa Pembuatan Website", "Web Development", "Corporate Website", "Sistem ERP", "Next.js", "Pontianak", "Surabaya"],
+  authors: [{ name: "Ruvia Studios" }],
+  creator: "Ruvia Studios",
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: site.url,
+    title: site.name,
+    description: site.tagline,
+    siteName: site.name,
+    images: [
+      {
+        url: "/asset-porto/corporate_showcase.png", // Fallback OG image
+        width: 1200,
+        height: 630,
+        alt: "Ruvia Studios - Digital Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.tagline,
+    images: ["/asset-porto/corporate_showcase.png"],
+    creator: "@ruviastudios",
+  },
 };
 
 export default function RootLayout({

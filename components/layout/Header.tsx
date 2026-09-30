@@ -47,7 +47,9 @@ export function Header() {
               alt={site.name}
               width={128}
               height={34}
+              priority
               className="h-8 w-auto transition-transform group-hover:scale-105"
+              style={{ width: "auto" }}
             />
           </Link>
 
@@ -199,6 +201,7 @@ export function Header() {
                   width={120}
                   height={32}
                   className="h-8 w-auto"
+                  style={{ width: "auto" }}
                 />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}

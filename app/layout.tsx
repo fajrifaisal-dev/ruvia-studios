@@ -19,34 +19,47 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: site.name,
+    default: "Jasa Pembuatan Website & Sistem Bisnis | Ruvia Studios (Pontianak & Surabaya)",
     template: `%s | ${site.name}`,
   },
-  description: site.tagline,
+  description:
+    "Jasa pembuatan website profesional, landing page SEO, dan sistem bisnis custom di Pontianak & Surabaya. Ditangani langsung oleh Software Engineer.",
   metadataBase: new URL(site.url),
-  keywords: ["Software House", "Jasa Pembuatan Website", "Web Development", "Corporate Website", "Sistem ERP", "Next.js", "Pontianak", "Surabaya"],
+  keywords: [
+    "Jasa Pembuatan Website",
+    "Jasa Website Pontianak",
+    "Jasa Website Surabaya",
+    "Web Developer Pontianak",
+    "Web Developer Surabaya",
+    "Software House Indonesia",
+    "Sistem Bisnis Custom",
+    "Website Landing Page",
+    "Company Profile Website",
+  ],
   authors: [{ name: "Ruvia Studios" }],
   creator: "Ruvia Studios",
   openGraph: {
     type: "website",
     locale: "id_ID",
     url: site.url,
-    title: site.name,
-    description: site.tagline,
+    title: "Jasa Pembuatan Website & Sistem Bisnis | Ruvia Studios",
+    description:
+      "Website cepat, modern, dan SEO-friendly di Pontianak & Surabaya. Ditangani langsung oleh Software Engineer.",
     siteName: site.name,
     images: [
       {
-        url: "/asset-porto/corporate_showcase.png", // Fallback OG image
+        url: "/asset-porto/corporate_showcase.png",
         width: 1200,
         height: 630,
-        alt: "Ruvia Studios - Digital Solutions",
+        alt: "Ruvia Studios - Jasa Pembuatan Website & Sistem Bisnis",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
-    description: site.tagline,
+    title: "Jasa Pembuatan Website & Sistem Bisnis | Ruvia Studios",
+    description:
+      "Website cepat, modern, dan SEO-friendly di Pontianak & Surabaya. Ditangani langsung oleh Software Engineer.",
     images: ["/asset-porto/corporate_showcase.png"],
     creator: "@ruviastudios",
   },
@@ -65,47 +78,79 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLdGraph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "LocalBusiness"],
+        "@id": `${site.url}/#organization`,
+        name: site.name,
+        url: site.url,
+        logo: `${site.url}/brand/ruvia-icon.svg`,
+        description:
+          "Studio rekayasa perangkat lunak & jasa pembuatan website profesional berbasis di Pontianak dan Surabaya.",
+        telephone: `+${site.whatsapp.number}`,
+        email: site.email,
+        priceRange: "Rp 1.000.000 - Custom Scope",
+        address: site.locations.map((loc) => ({
+          "@type": "PostalAddress",
+          streetAddress: loc.street,
+          addressLocality: loc.city,
+          addressRegion: loc.region,
+          addressCountry: loc.country,
+        })),
+        areaServed: ["Pontianak", "Surabaya", "Kalimantan Barat", "Jawa Timur", "Indonesia"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Layanan Pembuatan Website & Sistem",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Website Starter (Landing Page)",
+                description: "Website 1 halaman profesional lengkap dengan domain, hosting, SSL, dan integrasi WhatsApp.",
+              },
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                price: "1000000",
+                priceCurrency: "IDR",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Sistem & Web Custom",
+                description: "Sistem CRM, ERP, Kasir POS, dan aplikasi web custom skala industri.",
+              },
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                price: "Custom Scope",
+                priceCurrency: "IDR",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        url: site.url,
+        name: site.name,
+        inLanguage: "id-ID",
+        publisher: { "@id": `${site.url}/#organization` },
+      },
+    ],
+  };
+
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="id" className={`${inter.variable} ${jakarta.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: site.name,
-              url: site.url,
-              description: site.tagline,
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: `+${site.whatsapp.number}`,
-                contactType: "sales",
-                availableLanguage: ["en", "id"],
-              },
-              areaServed: site.serviceArea,
-              location: site.locations.map((loc) => ({
-                "@type": "Place",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: site.showStreetAddress ? loc.street : undefined,
-                  addressLocality: loc.city,
-                  addressRegion: loc.region,
-                  addressCountry: loc.country,
-                },
-              })),
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: site.name,
-              url: site.url,
-            }),
+            __html: JSON.stringify(jsonLdGraph),
           }}
         />
       </head>

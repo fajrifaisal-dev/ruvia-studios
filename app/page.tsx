@@ -3,6 +3,7 @@ import { getWhatsAppLink } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2, Star, ArrowRight, Monitor, Code, Settings, Plus } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { DeviceFrame } from "@/components/ui/DeviceFrame";
 
 export default function Home() {
   return (
@@ -21,15 +22,15 @@ export default function Home() {
               <Reveal>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--accent-soft)] border border-[var(--accent)]/30 text-sm font-semibold text-[var(--accent-strong)] mb-8 tracking-wide">
                   <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
-                  Tersedia untuk Proyek Baru
+                  Buka Proyek Baru · Respons Cepat
                 </div>
               </Reveal>
               
               <Reveal delay={0.1}>
-                <h1 className="text-[clamp(2.6rem,5vw+1rem,4.75rem)] font-extrabold leading-[1.05] tracking-tight text-[var(--ink)] mb-6">
-                  Solusi digital untuk{" "}
+                <h1 className="text-[clamp(2.4rem,4.5vw+1rem,4.2rem)] font-extrabold leading-[1.08] tracking-tight text-[var(--ink)] mb-6">
+                  Jasa Pembuatan Website &{" "}
                   <span className="relative inline-block">
-                    <span className="text-[var(--accent)]">bisnis berkembang.</span>
+                    <span className="text-[var(--accent)]">Sistem Bisnis Profesional</span>
                     <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 300 8" fill="none">
                       <path d="M1 5.5C50 2 100 1 150 3.5C200 6 250 7 299 5.5" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeOpacity="0.5"/>
                     </svg>
@@ -39,21 +40,21 @@ export default function Home() {
               
               <Reveal delay={0.2}>
                 <p className="text-lg md:text-xl text-[var(--ink-muted)] mb-10 leading-relaxed font-medium max-w-xl">
-                  Kami membangun website profesional dan sistem digital praktis yang membantu bisnis Anda tumbuh, terhubung dengan pelanggan, dan beroperasi lebih efisien.
+                  Website cepat, modern, dan SEO-friendly berbasis di Pontianak & Surabaya. Ditangani langsung oleh Software Engineer tanpa perantara.
                 </p>
               </Reveal>
               
               <Reveal delay={0.3}>
                 <div className="flex flex-col sm:flex-row items-start gap-4 mb-10">
-                  <a href={getWhatsAppLink("Halo Ruvia Studios, saya ingin memulai proyek digital untuk bisnis saya.")} target="_blank" rel="noopener noreferrer">
+                  <a href={getWhatsAppLink("Halo Ruvia Studios, saya mau berkonsultasi mengenai pembuatan website/sistem untuk bisnis saya.")} target="_blank" rel="noopener noreferrer">
                     <button className="h-14 px-8 text-base bg-[var(--accent-strong)] hover:bg-[var(--accent-hover)] text-white font-bold rounded-xl inline-flex items-center gap-2 shadow-2xl shadow-[var(--accent)]/30 hover:scale-105 hover:shadow-[var(--accent)]/50 transition-all duration-300">
-                      Mulai Proyek
+                      Konsultasi Gratis via WhatsApp
                       <ArrowRight className="w-5 h-5" />
                     </button>
                   </a>
                   <a href="/portfolio">
                     <button className="h-14 px-8 text-base bg-[var(--surface)] hover:bg-[var(--surface-alt)] text-[var(--ink)] font-semibold rounded-xl inline-flex items-center gap-2 border border-[var(--line)] hover:border-[var(--ink-muted)] transition-all duration-300">
-                      Lihat Portfolio
+                      Lihat Portofolio
                     </button>
                   </a>
                 </div>
@@ -63,105 +64,54 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-6 text-sm text-[var(--ink-muted)] py-6 border-t border-b border-[var(--line)] w-full">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span className="font-medium">Scope Jelas</span>
+                    <span className="font-medium">Estimasi 1–2 Minggu</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span className="font-medium">Harga Transparan</span>
+                    <span className="font-medium">Pontianak & Surabaya</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span className="font-medium">Pengiriman Cepat</span>
+                    <span className="font-medium">Ditangani Langsung Engineer</span>
                   </div>
                 </div>
               </Reveal>
             </div>
 
-            {/* Right: Floating UI Mockup */}
+            {/* Right: Real Demo Showcase with DeviceFrame */}
             <Reveal delay={0.35}>
-              <div className="relative h-[500px] lg:h-[640px] flex items-center justify-center pb-8 lg:pb-0">
-                {/* Main Dashboard Card */}
-                <div className="w-full max-w-[400px] bg-white rounded-2xl shadow-2xl border border-[var(--line)] overflow-hidden">
-                  <div className="bg-[var(--surface-alt)] px-4 py-3 flex items-center gap-2 border-b border-[var(--line)]">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                    </div>
-                    <div className="flex-1 mx-3 bg-white rounded-md px-3 py-1.5 text-xs text-[var(--ink-muted)] border border-[var(--line)] truncate">
-                      ruviastudios.com/dashboard
-                    </div>
-                  </div>
-                  <div className="p-5 bg-[var(--bg)]">
-                    <div className="flex items-center justify-between mb-5">
-                      <div>
-                        <div className="text-xs text-[var(--ink-muted)] mb-1">Total Pendapatan</div>
-                        <div className="text-2xl font-black text-[var(--ink)]">Rp 48.2 Jt</div>
+              <div className="relative flex items-center justify-center pb-8 lg:pb-0">
+                <div className="w-full max-w-[500px]">
+                  <DeviceFrame type="browser" url="demo-hellofriday.ruviastudios.site" title="Hello Friday Studio — Demo">
+                    <div className="p-6 bg-[var(--bg)] text-left">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs font-bold px-3 py-1 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 rounded-full">
+                          Demo / Preview Fungsional
+                        </span>
+                        <span className="text-xs text-[var(--ink-muted)]">Surabaya & Malang</span>
                       </div>
-                      <div className="w-10 h-10 bg-[var(--accent-soft)] rounded-xl flex items-center justify-center">
-                        <Monitor className="w-5 h-5 text-[var(--accent)]" />
+                      <h3 className="text-xl font-bold text-[var(--ink)] mb-2">Hello Friday — Slow Living Beauty</h3>
+                      <p className="text-sm text-[var(--ink-muted)] mb-4 line-clamp-2">
+                        Portal reservasi studio kecantikan terpusat dengan katalog layanan interaktif & pemilih slot jam kosong instan.
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <a
+                          href="https://whimsical-stardust-cde28a.netlify.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[var(--accent-strong)] px-4 py-2 rounded-lg hover:bg-[var(--accent-hover)] transition-colors"
+                        >
+                          Lihat Demo Live ↗
+                        </a>
+                        <a
+                          href="/portfolio/hello-friday"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--ink-muted)] hover:text-[var(--ink)] transition-colors"
+                        >
+                          Detail Scope →
+                        </a>
                       </div>
                     </div>
-                    <div className="flex items-end gap-1.5 h-20 mb-5">
-                      {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
-                        <div key={i} className="flex-1 rounded-sm" style={{
-                          height: `${h}%`,
-                          backgroundColor: i === 10 ? 'var(--accent)' : i === 11 ? 'var(--accent-soft)' : '#e2e8f0',
-                          opacity: i > 8 ? 1 : 0.5,
-                        }} />
-                      ))}
-                    </div>
-                    <div className="space-y-3">
-                      {[
-                        { label: "Traffic Website", val: "+24%", ok: true },
-                        { label: "Tingkat Konversi", val: "+8.2%", ok: true },
-                        { label: "Tingkat Keluar", val: "-12%", ok: false },
-                      ].map((row, i) => (
-                        <div key={i} className="flex justify-between items-center py-2 border-b border-[var(--line)] last:border-0">
-                          <span className="text-sm text-[var(--ink-muted)]">{row.label}</span>
-                          <span className={`text-sm font-bold ${row.ok ? "text-emerald-500" : "text-[var(--accent)]"}`}>{row.val}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating card top-right */}
-                <div className="absolute top-2 -right-2 lg:-right-6 bg-white rounded-xl shadow-xl border border-[var(--line)] p-4 w-44" style={{ animation: "heroFloat 6s ease-in-out infinite" }}>
-                  <div className="text-xs text-[var(--ink-muted)] mb-1">Proyek Baru</div>
-                  <div className="font-bold text-sm text-[var(--ink)] mb-2">Landing Page SEO</div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                    <span className="text-xs text-emerald-600 font-semibold">Sedang Dikerjakan</span>
-                  </div>
-                </div>
-
-                {/* Floating card bottom-left */}
-                <div className="absolute bottom-12 -left-2 lg:-left-8 bg-[var(--ink)] rounded-xl shadow-xl p-4 w-48" style={{ animation: "heroFloat 8s ease-in-out 1.5s infinite" }}>
-                  <div className="text-xs text-white/50 mb-2">Status Sistem</div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-emerald-400" style={{ animation: "pulse 2s infinite" }}></div>
-                    <span className="text-xs text-white font-semibold">Semua sistem aktif</span>
-                  </div>
-                  <div className="space-y-1.5">
-                    {["API", "Database", "CDN"].map((s, i) => (
-                      <div key={i} className="flex justify-between">
-                        <span className="text-xs text-white/50">{s}</span>
-                        <span className="text-xs text-emerald-400 font-bold">100%</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Floating badge top-left */}
-                <div className="absolute top-14 -left-2 lg:-left-4 bg-[var(--accent)] text-white rounded-xl shadow-lg p-3 flex items-center gap-3" style={{ animation: "heroFloat 7s ease-in-out 3s infinite" }}>
-                  <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
-                    <Star className="w-4 h-4 fill-current" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-black">Klien Puas</div>
-                    <div className="text-xs opacity-75">20+ proyek</div>
-                  </div>
+                  </DeviceFrame>
                 </div>
               </div>
             </Reveal>

@@ -20,6 +20,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${site.url}/jasa-pembuatan-website-pontianak`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${site.url}/jasa-pembuatan-website-surabaya`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${site.url}/portfolio`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -29,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${site.url}/insight`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${site.url}/contact`,

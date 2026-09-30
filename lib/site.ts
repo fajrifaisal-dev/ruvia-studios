@@ -21,7 +21,7 @@ export const site = {
       city: "Surabaya",
       region: "East Java",
       country: "ID",
-      street: "Jl. Medokan Semampir Indah No. 36",
+      street: "Jl. Dr. Ir. H. Soekarno Jl. Medokan Semampir Indah No.63, Medokan Semampir, Kec. Sukolilo, Surabaya, Jawa Timur 60119, Indonesia",
     },
   ],
   serviceArea: "Indonesia",

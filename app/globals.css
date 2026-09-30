@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Warna diambil langsung dari logo Ruvia: navy #0e1427 dan violet #7460f7 */
+:root {
+  --bg: #f5f8fd;            /* off-white kebiruan (sama dengan latar logo) */
+  --surface: #ffffff;       /* kartu */
+  --surface-alt: #edf1f9;   /* section selang-seling */
+  --ink: #0e1427;           /* navy logo: teks utama & section gelap */
+  --ink-muted: #5a6275;     /* teks sekunder (kontras 5.7:1 di atas --bg) */
+  --line: #dfe4ee;          /* border */
+  --accent: #7460f7;        /* violet logo: elemen grafis, ikon, garis, highlight */
+  --accent-strong: #5f4ae6; /* violet lebih tua: tombol & teks/link (kontras 5.8:1 dgn putih) */
+  --accent-hover: #5238d4;
+  --accent-soft: #eeebff;   /* bg badge / highlight */
+  --success: #16a34a;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --font-heading: var(--font-jakarta);
+  --font-sans: var(--font-inter);
+  --radius-card: 16px;
+  --radius-control: 12px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

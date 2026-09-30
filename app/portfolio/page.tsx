@@ -1,5 +1,7 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { getAllProjects } from "@/lib/portfolio-data";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -7,50 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
-  const projects = [
-    {
-      title: "Hello Friday",
-      client: "Beauty & Wellness",
-      desc: "Platform digital premium untuk beauty & wellness berkonsep slow living. Showcase ini menonjolkan fitur pencarian multi-cabang (Surabaya & Malang), galeri ambience studio yang menenangkan, serta alur reservasi instan. Desainnya menggunakan tema dark mode yang eksklusif.",
-      image: "/asset-porto/Gemini_Generated_Image_olme1jolme1jolme.jpg",
-      tags: ["Dark Mode UI", "Multi-Branch Search", "Instant Booking"],
-    },
-    {
-      title: "Kazi - Nail Beauty Bar",
-      client: "Beauty & Lifestyle",
-      desc: "Website untuk jaringan nail art yang terintegrasi di dalam coffee shop. Showcase ini menonjolkan desain yang lebih cerah (playful), fitur Outlet Finder instan untuk menemukan 15+ lokasi, dan kemudahan reservasi langsung melalui WhatsApp.",
-      image: "/asset-porto/Gemini_Generated_Image_2ej6jm2ej6jm2ej6.jpg",
-      tags: ["Playful UI", "Outlet Finder", "WhatsApp Booking"],
-    },
-    {
-      title: "Custom ERP & Supply Chain",
-      client: "Enterprise & Operations",
-      desc: "Sistem manajemen sumber daya perusahaan terpadu untuk efisiensi inventaris, alur kerja operasional, dan otomatisasi laporan keuangan.",
-      image: "/asset-porto/erp_showcase.png",
-      tags: ["Enterprise ERP", "Inventory Control", "Financial Reports"],
-    },
-    {
-      title: "Logistics & Freight Tracking",
-      client: "Logistics & Transport",
-      desc: "Landing page interaktif & portal pelacakan armada pengiriman barang real-time dengan kalkulator tarif otomatis.",
-      image: "/asset-porto/logistics_showcase.png",
-      tags: ["Real-time Tracking", "Rate Calculator", "Fleet Management"],
-    },
-    {
-      title: "Executive Company Profile",
-      client: "Corporate & Business",
-      desc: "Company profile premium dengan animasi mikro modern, integrasi katalog produk, dan formulir konsultasi instan.",
-      image: "/asset-porto/corporate_showcase.png",
-      tags: ["Interactive UI", "Brand Identity", "Lead Generation"],
-    },
-    {
-      title: "Smart CRM & Client Portal",
-      client: "Client Portal / CRM",
-      desc: "Platform CRM terpusat untuk memantau siklus pelanggan, pipeline penjualan, dan manajemen tiket dukungan layanan.",
-      image: "/asset-porto/crm_showcase.png",
-      tags: ["Sales Pipeline", "Customer Insights", "Ticket Management"],
-    },
-  ];
+  const projects = getAllProjects();
 
   return (
     <div className="bg-[var(--ink)] min-h-screen text-white pt-24 pb-32">
@@ -205,32 +164,37 @@ export default function PortfolioPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <Reveal key={idx} delay={0.1 * idx}>
-              <div className="bg-white rounded-[32px] overflow-hidden text-[var(--ink)] hover:-translate-y-2 transition-all duration-500 cursor-pointer group shadow-xl hover:shadow-2xl border border-white/10 flex flex-col h-full">
-                <div className="aspect-[4/3] bg-[var(--surface-alt)] relative overflow-hidden group">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
-                </div>
-                <div className="p-8 flex flex-col flex-1 justify-between">
-                  <div>
-                    <div className="text-xs font-bold text-[var(--accent)] mb-2 uppercase tracking-wider">{project.client}</div>
-                    <h3 className="text-2xl font-bold mb-3 leading-tight text-gray-900">{project.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed text-sm">
-                      {project.desc}
-                    </p>
+              <Link href={`/portfolio/${project.slug}`} className="block h-full">
+                <div className="bg-white rounded-[32px] overflow-hidden text-[var(--ink)] hover:-translate-y-2 transition-all duration-500 cursor-pointer group shadow-xl hover:shadow-2xl border border-white/10 flex flex-col h-full">
+                  <div className="aspect-[4/3] bg-[var(--surface-alt)] relative overflow-hidden group">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-gray-900 px-3 py-1.5 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 flex items-center gap-1 shadow-lg">
+                      Lihat Case Study <span>→</span>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-100">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="text-xs font-semibold px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="p-8 flex flex-col flex-1 justify-between">
+                    <div>
+                      <div className="text-xs font-bold text-[var(--accent)] mb-2 uppercase tracking-wider">{project.client}</div>
+                      <h3 className="text-2xl font-bold mb-3 leading-tight text-gray-900 group-hover:text-[var(--accent)] transition-colors">{project.title}</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed text-sm line-clamp-3">
+                        {project.tagline || project.challenges?.overview}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-100">
+                      {project.tags.map((tag, i) => (
+                        <span key={i} className="text-xs font-semibold px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </Reveal>
           ))}
         </div>

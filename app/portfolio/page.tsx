@@ -12,190 +12,111 @@ export default function PortfolioPage() {
   const projects = getAllProjects();
 
   return (
-    <div className="bg-[var(--ink)] min-h-screen text-white pt-24 pb-32">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+    <div className="bg-slate-950 min-h-screen text-slate-100 pt-32 pb-32 selection:bg-indigo-500/30 selection:text-indigo-200">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        
+        {/* Hero Section */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+          <div className="text-center max-w-3xl mx-auto mb-24">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
               Portofolio
             </h1>
-            <p className="text-base md:text-lg text-[var(--line)] leading-relaxed font-medium max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
               Studi kasus dan implementasi nyata rekayasa perangkat lunak untuk menyelesaikan tantangan bisnis klien kami di Indonesia.
             </p>
           </div>
         </Reveal>
 
-        {/* Process Timeline — Animated Network */}
-        <div className="mb-24 w-full overflow-x-auto" style={{ scrollbarWidth: "none" }}>
-          <div className="min-w-[720px] relative">
-            <svg viewBox="0 0 880 260" fill="none" className="w-full" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#7460f7" stopOpacity="0.9"/>
-                  <stop offset="100%" stopColor="#34d399" stopOpacity="0.7"/>
-                </linearGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                  <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
+        {/* Process Timeline */}
+        <Reveal delay={0.2}>
+          <div className="mb-24 relative">
+            {/* Horizontal Line for Desktop */}
+            <div className="hidden md:block absolute top-[11px] left-0 w-full h-[1px] bg-slate-800"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+              {/* Step 1 */}
+              <div className="relative group">
+                <div className="hidden md:block absolute -top-[4px] left-0 w-2 h-2 rounded-full bg-indigo-500 shadow-[0_0_12px_rgba(99,102,241,0.8)] transition-all duration-300 group-hover:scale-150"></div>
+                <div className="text-indigo-400 font-mono text-xs font-bold tracking-widest mb-3 md:mt-8">01.</div>
+                <h3 className="text-xl font-semibold text-slate-100 mb-3 group-hover:text-white transition-colors">Research</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Analisis mendalam terhadap kebutuhan bisnis, target audiens, kompetisi, dan peluang strategis klien.
+                </p>
+              </div>
 
-              {/* ── CONNECTOR 01→02 ── */}
-              <line x1="185" y1="130" x2="235" y2="130" stroke="white" strokeOpacity="0.1" strokeWidth="1.5" strokeDasharray="5 4"/>
-              <circle r="5" fill="#7460f7" filter="url(#glow)">
-                <animateMotion dur="2.5s" repeatCount="indefinite" begin="0s">
-                  <mpath href="#p1"/>
-                </animateMotion>
-                <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0s"/>
-              </circle>
-              <path id="p1" d="M185,130 L235,130" fill="none"/>
+              {/* Step 2 */}
+              <div className="relative group">
+                <div className="hidden md:block absolute -top-[4px] left-0 w-2 h-2 rounded-full bg-slate-700 group-hover:bg-indigo-400 transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_12px_rgba(129,140,248,0.8)]"></div>
+                <div className="text-slate-500 font-mono text-xs font-bold tracking-widest mb-3 md:mt-8 group-hover:text-indigo-400 transition-colors">02.</div>
+                <h3 className="text-xl font-semibold text-slate-100 mb-3 group-hover:text-white transition-colors">System Design</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Pembuatan arsitektur sistem, wireframe, dan desain UI/UX interaktif yang berorientasi pada konversi.
+                </p>
+              </div>
 
-              {/* ── CONNECTOR 02→03 ── */}
-              <line x1="410" y1="130" x2="460" y2="130" stroke="white" strokeOpacity="0.1" strokeWidth="1.5" strokeDasharray="5 4"/>
-              <circle r="5" fill="#7460f7" filter="url(#glow)">
-                <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.83s">
-                  <mpath href="#p2"/>
-                </animateMotion>
-                <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0.83s"/>
-              </circle>
-              <path id="p2" d="M410,130 L460,130" fill="none"/>
+              {/* Step 3 */}
+              <div className="relative group">
+                <div className="hidden md:block absolute -top-[4px] left-0 w-2 h-2 rounded-full bg-slate-700 group-hover:bg-indigo-400 transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_12px_rgba(129,140,248,0.8)]"></div>
+                <div className="text-slate-500 font-mono text-xs font-bold tracking-widest mb-3 md:mt-8 group-hover:text-indigo-400 transition-colors">03.</div>
+                <h3 className="text-xl font-semibold text-slate-100 mb-3 group-hover:text-white transition-colors">Development</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Proses rekayasa kode dengan standar kualitas tinggi, fleksibilitas, dan tingkat keamanan yang optimal.
+                </p>
+              </div>
 
-              {/* ── CONNECTOR 03→04 ── */}
-              <line x1="635" y1="130" x2="685" y2="130" stroke="white" strokeOpacity="0.1" strokeWidth="1.5" strokeDasharray="5 4"/>
-              <circle r="5" fill="#34d399" filter="url(#glow)">
-                <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.67s">
-                  <mpath href="#p3"/>
-                </animateMotion>
-                <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="1.67s"/>
-              </circle>
-              <path id="p3" d="M635,130 L685,130" fill="none"/>
-
-              {/* CARD 01 — RESEARCH */}
-              <g transform="translate(10, 48)">
-                <rect width="175" height="165" rx="14" stroke="white" strokeOpacity="0.12" strokeWidth="1.5" fill="white" fillOpacity="0.04"/>
-                <rect x="55" y="12" width="65" height="100" rx="10" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" fill="none"/>
-                <rect x="62" y="20" width="51" height="7" rx="2" fill="white" fillOpacity="0.1"/>
-                <rect x="62" y="31" width="36" height="5" rx="2" fill="white" fillOpacity="0.15"/>
-                <rect x="62" y="40" width="51" height="24" rx="3" fill="white" fillOpacity="0.07"/>
-                <rect x="62" y="69" width="24" height="4" rx="2" fill="white" fillOpacity="0.15"/>
-                <rect x="62" y="77" width="51" height="4" rx="2" fill="white" fillOpacity="0.08"/>
-                <rect x="62" y="85" width="38" height="4" rx="2" fill="white" fillOpacity="0.08"/>
-                <circle cx="22" cy="40" r="12" stroke="white" strokeOpacity="0.3" strokeWidth="1.5" fill="none"/>
-                <line x1="30" y1="48" x2="40" y2="58" stroke="white" strokeOpacity="0.3" strokeWidth="2" strokeLinecap="round"/>
-                <circle cx="22" cy="40" r="12" stroke="#7460f7" fill="none">
-                  <animate attributeName="r" values="12;20;12" dur="2s" repeatCount="indefinite"/>
-                  <animate attributeName="strokeOpacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <text x="10" y="158" fontSize="7.5" fill="white" fillOpacity="0.35" fontFamily="monospace" fontWeight="700" letterSpacing="2">01. RESEARCH</text>
-              </g>
-
-              {/* CARD 02 — SYSTEM DESIGN */}
-              <g transform="translate(235, 48)">
-                <rect width="175" height="165" rx="14" stroke="white" strokeOpacity="0.12" strokeWidth="1.5" fill="white" fillOpacity="0.04"/>
-                <rect x="14" y="14" width="147" height="100" rx="7" stroke="white" strokeOpacity="0.15" strokeWidth="1.5" fill="none"/>
-                <rect x="14" y="14" width="147" height="16" rx="7" fill="white" fillOpacity="0.07"/>
-                <circle cx="26" cy="22" r="3" fill="white" fillOpacity="0.2"/>
-                <circle cx="36" cy="22" r="3" fill="white" fillOpacity="0.2"/>
-                <circle cx="46" cy="22" r="3" fill="white" fillOpacity="0.2"/>
-                <rect x="22" y="36" width="30" height="70" rx="4" fill="white" fillOpacity="0.05" stroke="white" strokeOpacity="0.08" strokeWidth="1"/>
-                <rect x="27" y="44" width="18" height="3" rx="1.5" fill="white" fillOpacity="0.2"/>
-                <rect x="27" y="52" width="18" height="3" rx="1.5" fill="white" fillOpacity="0.1"/>
-                <rect x="27" y="60" width="18" height="3" rx="1.5" fill="white" fillOpacity="0.1"/>
-                <rect x="59" y="36" width="94" height="30" rx="4" fill="white" fillOpacity="0.07"/>
-                <rect x="59" y="72" width="44" height="14" rx="4" fill="white" fillOpacity="0.04"/>
-                <rect x="109" y="72" width="44" height="14" rx="4" fill="white" fillOpacity="0.04"/>
-                <path d="M143 50 L148 60 L145 58 L144 64 L141 54 L137 56 Z" fill="white">
-                  <animate attributeName="fillOpacity" values="0.15;0.7;0.15" dur="1.5s" repeatCount="indefinite"/>
-                </path>
-                <text x="10" y="158" fontSize="7.5" fill="white" fillOpacity="0.35" fontFamily="monospace" fontWeight="700" letterSpacing="1.5">02. SYSTEM DESIGN</text>
-              </g>
-
-              {/* CARD 03 — DEVELOPMENT */}
-              <g transform="translate(460, 48)">
-                <rect width="175" height="165" rx="14" stroke="white" strokeOpacity="0.12" strokeWidth="1.5" fill="white" fillOpacity="0.04"/>
-                <rect x="14" y="14" width="147" height="100" rx="6" stroke="white" strokeOpacity="0.12" strokeWidth="1" fill="white" fillOpacity="0.03"/>
-                <rect x="14" y="14" width="147" height="14" rx="6" fill="white" fillOpacity="0.06"/>
-                {[
-                  { x: 24, w: 20, c: "#7460f7", d: "0s",   dur: "2.2s" },
-                  { x: 30, w: 32, c: "#34d399", d: "0.25s", dur: "2.5s" },
-                  { x: 30, w: 25, c: "#fbbf24", d: "0.5s",  dur: "2.1s" },
-                  { x: 36, w: 55, c: "#7460f7", d: "0.75s", dur: "2.8s" },
-                  { x: 24, w: 20, c: "#34d399", d: "1s",    dur: "2.3s" },
-                ].map((l, i) => (
-                  <rect key={i} x={l.x} y={34 + i * 13} width={l.w} height="3" rx="1.5" fill={l.c} fillOpacity="0.75">
-                    <animate attributeName="width" values={`${l.w * 0.1};${l.w};${l.w * 0.1}`} dur={l.dur} begin={l.d} repeatCount="indefinite"/>
-                  </rect>
-                ))}
-                <rect x="24" y="101" width="2" height="10" rx="1" fill="white">
-                  <animate attributeName="fillOpacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
-                </rect>
-                <text x="10" y="158" fontSize="7.5" fill="white" fillOpacity="0.35" fontFamily="monospace" fontWeight="700" letterSpacing="2">03. DEVELOPMENT</text>
-              </g>
-
-              {/* CARD 04 — GO-LIVE */}
-              <g transform="translate(685, 48)">
-                <rect width="175" height="165" rx="14" stroke="#34d399" strokeOpacity="0.22" strokeWidth="1.5" fill="white" fillOpacity="0.04"/>
-                <circle cx="87" cy="62" r="32" fill="#34d399" fillOpacity="0.08" stroke="#34d399" strokeWidth="1.5">
-                  <animate attributeName="r" values="32;37;32" dur="2.5s" repeatCount="indefinite"/>
-                  <animate attributeName="strokeOpacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <path d="M72 62 L82 72 L104 50" stroke="#34d399" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="22" cy="112" r="4" fill="#34d399">
-                  <animate attributeName="fillOpacity" values="0.3;1;0.3" dur="1.2s" repeatCount="indefinite"/>
-                </circle>
-                <rect x="34" y="110" width="115" height="3" rx="1.5" fill="white" fillOpacity="0.12"/>
-                <rect x="34" y="118" width="88" height="3" rx="1.5" fill="white" fillOpacity="0.07"/>
-                <rect x="22" y="130" width="131" height="22" rx="7" fill="#34d399" fillOpacity="0.15" stroke="#34d399" strokeOpacity="0.35" strokeWidth="1"/>
-                <text x="10" y="158" fontSize="7.5" fill="#34d399" fillOpacity="0.55" fontFamily="monospace" fontWeight="700" letterSpacing="2">04. GO-LIVE</text>
-              </g>
-
-              {/* Ambient background dots */}
-              <circle cx="123" cy="230" r="3" fill="white" fillOpacity="0.06">
-                <animate attributeName="fillOpacity" values="0.03;0.12;0.03" dur="3s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="545" cy="20" r="2.5" fill="#7460f7" fillOpacity="0.15">
-                <animate attributeName="fillOpacity" values="0.08;0.35;0.08" dur="2.5s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="760" cy="235" r="3.5" fill="#34d399" fillOpacity="0.12">
-                <animate attributeName="fillOpacity" values="0.05;0.22;0.05" dur="3.5s" repeatCount="indefinite"/>
-              </circle>
-            </svg>
+              {/* Step 4 */}
+              <div className="relative group">
+                <div className="hidden md:block absolute -top-[4px] left-0 w-2 h-2 rounded-full bg-slate-700 group-hover:bg-indigo-400 transition-all duration-300 group-hover:scale-150 group-hover:shadow-[0_0_12px_rgba(129,140,248,0.8)]"></div>
+                <div className="text-slate-500 font-mono text-xs font-bold tracking-widest mb-3 md:mt-8 group-hover:text-indigo-400 transition-colors">04.</div>
+                <h3 className="text-xl font-semibold text-slate-100 mb-3 group-hover:text-white transition-colors">Go-Live</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Peluncuran sistem, optimasi performa infrastruktur, dan dukungan teknis berkelanjutan pasca-rilis.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </Reveal>
 
-        {/* Project Cards */}
+        {/* Project Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
-            <Reveal key={idx} delay={0.1 * idx}>
-              <Link href={`/portfolio/${project.slug}`} className="block h-full">
-                <div className="bg-white rounded-[32px] overflow-hidden text-[var(--ink)] hover:-translate-y-2 transition-all duration-500 cursor-pointer group shadow-xl hover:shadow-2xl border border-white/10 flex flex-col h-full">
-                  <div className="aspect-[4/3] bg-[var(--surface-alt)] relative overflow-hidden group">
+            <Reveal key={idx} delay={0.1 * idx} className="h-full">
+              <Link href={`/portfolio/${project.slug}`} className="block h-full group">
+                <div className="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 hover:bg-slate-900/60 transition-all duration-500 flex flex-col h-full">
+                  
+                  {/* Image */}
+                  <div className="aspect-video relative overflow-hidden bg-slate-950 border-b border-slate-800">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                    <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-gray-900 px-3 py-1.5 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 flex items-center gap-1 shadow-lg">
-                      Lihat Case Study <span>→</span>
-                    </div>
                   </div>
-                  <div className="p-8 flex flex-col flex-1 justify-between">
+                  
+                  {/* Content */}
+                  <div className="p-8 flex flex-col flex-grow">
                     <div>
-                      <div className="text-xs font-bold text-[var(--accent)] mb-2 uppercase tracking-wider">{project.client}</div>
-                      <h3 className="text-2xl font-bold mb-3 leading-tight text-gray-900 group-hover:text-[var(--accent)] transition-colors">{project.title}</h3>
-                      <p className="text-gray-600 mb-6 leading-relaxed text-sm line-clamp-3">
+                      <div className="text-xs uppercase tracking-widest text-indigo-400 font-semibold">
+                        {project.category}
+                      </div>
+                      <h3 className="text-2xl font-semibold mt-3 text-slate-100 group-hover:text-white transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-slate-400 text-sm mt-3 leading-relaxed line-clamp-3">
                         {project.tagline || project.challenges?.overview}
                       </p>
                     </div>
-                    <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-100">
-                      {project.tags.map((tag, i) => (
-                        <span key={i} className="text-xs font-semibold px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
+                    
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-slate-800/50">
+                      {project.tags.slice(0, 3).map((tag, i) => (
+                        <span key={i} className="border border-slate-700 text-slate-300 rounded-full px-3 py-1 text-xs whitespace-nowrap">
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
+                  
                 </div>
               </Link>
             </Reveal>

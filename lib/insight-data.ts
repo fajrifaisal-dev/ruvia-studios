@@ -20,7 +20,7 @@ export const insights: InsightArticle[] = [
     updatedAt: "2026-10-01",
     author: "Ruvia Studios",
     category: "Panduan Bisnis",
-    image: "/brand/ruvia-og-cover.jpg",
+    image: "/asset-porto/corporate_showcase.png",
     content: `
 <p>Banyak pelaku bisnis di Surabaya tergiur dengan iklan "Jasa Pembuatan Website Rp300.000 Terima Beres". Pertanyaannya, apakah website tersebut benar-benar bisa mendatangkan omzet, atau sekadar brosur digital yang tidak pernah dikunjungi siapa pun?</p>
 <p>Dalam artikel ini, kami selaku <em>software engineer</em> yang beroperasi di Surabaya akan membongkar struktur biaya pembuatan website secara transparan, agar Anda tidak salah pilih vendor.</p>

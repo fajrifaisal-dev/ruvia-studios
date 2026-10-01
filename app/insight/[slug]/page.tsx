@@ -155,7 +155,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--line)] text-xs font-semibold text-[var(--ink)] mb-6">
               {article.category}
             </div>
-            <h1 className="text-[clamp(1.8rem,3vw+1rem,3rem)] font-extrabold leading-tight text-[var(--ink)] mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug text-[var(--ink)] mb-6 text-balance">
               {article.title}
             </h1>
             <div className="flex items-center justify-center gap-4 text-sm text-[var(--ink-muted)]">
@@ -167,7 +167,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="rounded-3xl overflow-hidden border border-[var(--line)] shadow-lg mb-12 aspect-[21/9] relative">
+          <div className="rounded-3xl overflow-hidden border border-[var(--line)] shadow-lg mb-12 aspect-[16/9] sm:aspect-[21/9] relative bg-[var(--surface-alt)]">
             <Image 
               src={article.image} 
               alt={article.title}

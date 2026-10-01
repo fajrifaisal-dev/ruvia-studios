@@ -49,62 +49,70 @@ export default function InsightIndexPage() {
   };
 
   return (
-    <main className="bg-[var(--bg)] min-h-screen pt-28 pb-32">
+    <main className="bg-white min-h-screen pt-32 pb-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        
+        {/* Editorial Header */}
         <Reveal>
-          <header className="mb-16 text-center">
-            <h1 className="text-[clamp(2.5rem,4vw+1rem,4rem)] font-extrabold leading-tight text-[var(--ink)] mb-4 tracking-tight">
-              Kumpulan <span className="text-[var(--accent)]">Insight</span>
+          <header className="mb-20 md:mb-28 border-b border-gray-200 pb-12">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+              Insight &amp; Panduan.
             </h1>
-            <p className="text-lg text-[var(--ink-muted)] max-w-2xl mx-auto">
-              Panduan jujur dan studi kasus teknis seputar digitalisasi bisnis, pembuatan website, dan pengembangan *software* dari meja *engineer* kami.
+            <p className="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed">
+              Pemikiran, studi kasus, dan panduan teknis seputar rekayasa perangkat lunak dan strategi digital dari tim *engineer* kami.
             </p>
           </header>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Minimalist Editorial Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 lg:gap-y-24">
           {articles.map((article, idx) => {
             const dateObj = new Date(article.publishedAt);
             const formattedDate = new Intl.DateTimeFormat("id-ID", {
               day: "numeric",
-              month: "short",
+              month: "long",
               year: "numeric",
             }).format(dateObj);
 
+            // Make the first article span full width if desired, but a 2-col grid is very clean.
             return (
               <Reveal key={article.slug} delay={0.1 * idx}>
-                <Link href={`/insight/${article.slug}`} className="group block h-full">
-                  <article className="bg-[var(--surface)] border border-[var(--line)] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[var(--accent)] h-full flex flex-col">
-                    <div className="aspect-[16/9] w-full overflow-hidden bg-[var(--surface-alt)] relative border-b border-[var(--line)]">
+                <Link href={`/insight/${article.slug}`} className="group block">
+                  <article className="flex flex-col h-full">
+                    
+                    {/* Image Container (No rounded borders or shadows for a raw, editorial feel) */}
+                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-gray-100 mb-6">
                       <Image
                         src={article.image}
                         alt={article.title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                      <div className="absolute top-3 left-3 bg-[var(--surface)]/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[var(--ink)]">
-                        {article.category}
-                      </div>
                     </div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <time className="text-xs text-[var(--ink-muted)] mb-3 block font-semibold">
-                        {formattedDate}
-                      </time>
-                      <h2 className="text-xl font-bold text-[var(--ink)] mb-3 leading-snug group-hover:text-[var(--accent)] transition-colors">
-                        {article.title}
-                      </h2>
-                      <p className="text-sm text-[var(--ink-muted)] leading-relaxed line-clamp-3 mb-6 flex-grow">
-                        {article.description}
-                      </p>
-                      <div className="text-[var(--accent)] text-sm font-semibold mt-auto inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Baca Selengkapnya <span>&rarr;</span>
-                      </div>
+                    
+                    {/* Meta */}
+                    <div className="flex items-center gap-3 text-xs font-semibold text-gray-500 mb-4 uppercase tracking-widest">
+                      <span className="text-indigo-600">{article.category}</span>
+                      <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                      <time>{formattedDate}</time>
                     </div>
+                    
+                    {/* Title - Using h3 to avoid global h2 sizing conflicts */}
+                    <h3 className="!text-2xl md:!text-3xl font-bold text-gray-900 mb-4 leading-snug group-hover:text-indigo-600 transition-colors">
+                      {article.title}
+                    </h3>
+                    
+                    {/* Excerpt */}
+                    <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                      {article.description}
+                    </p>
+                    
                   </article>
                 </Link>
               </Reveal>

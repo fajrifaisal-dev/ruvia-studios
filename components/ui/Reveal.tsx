@@ -22,6 +22,7 @@ export function Reveal({
   return (
     <div ref={ref} style={{ width }} className={className}>
       <motion.div
+        className="h-full"
         variants={{
           hidden: { opacity: 0, y: 20 },
           visible: { opacity: 1, y: 0 },

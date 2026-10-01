@@ -103,7 +103,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/asset-porto/kazi-nail-outlet-locator.jpg",
     tags: ["Playful UI", "Outlet Finder", "Dynamic Price List", "Coffee Shop Integration"],
     projectStatus: "Proyek Klien (Real Case)",
-    demoUrl: "https://celadon-caramel-3f9b55.netlify.app/",
+    demoUrl: "https://kazi.ruviastudios.site/",
     sidebar: {
       clientDetail: "Kazi Nail Beauty Bar (4.4K+ IG Followers)",
       location: "15+ Outlet (Malang, Surabaya, Sidoarjo, Madura, Mojokerto, Jember, Banyuwangi, Jogja)",
@@ -155,7 +155,7 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Enterprise System & Operations",
     year: "2026",
     tagline: "Sistem manajemen sumber daya perusahaan terpadu untuk efisiensi inventaris, alur kerja operasional, dan otomatisasi laporan keuangan.",
-    image: "/asset-porto/erp_showcase.png",
+    image: "/asset-porto/Gemini_Generated_Image_onf9fuonf9fuonf9.jpg",
     tags: ["Enterprise ERP", "Inventory Control", "Financial Reports", "Role Management"],
     projectStatus: "Proyek Klien (Real Case)",
     sidebar: {
@@ -206,9 +206,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Logistics & Fleet Management",
     year: "2026",
     tagline: "Landing page interaktif & portal pelacakan armada pengiriman barang real-time dengan kalkulator tarif otomatis.",
-    image: "/asset-porto/logistics_showcase.png",
+    image: "/asset-porto/Gemini_Generated_Image_onf9fuonf9fuonf9.jpg",
     tags: ["Real-time Tracking", "Rate Calculator", "Fleet Management", "Interactive Map"],
     projectStatus: "Demo Konsep",
+    demoUrl: "https://delicate-panda-55fe47.netlify.app/",
     sidebar: {
       clientDetail: "Ruvia Concept Lab (Demo Showcase)",
       location: "Indonesia",
@@ -234,7 +235,7 @@ export const portfolioProjects: PortfolioProject[] = [
     },
     showcase: {
       caption: "Showcase antarmuka pelacakan kargo udara & laut beserta fitur kalkulator estimasi biaya.",
-      image: "/asset-porto/logistics_showcase.png",
+      image: "/asset-porto/Gemini_Generated_Image_onf9fuonf9fuonf9.jpg",
     },
     scopeDemo: {
       overview: "Fitur yang dihadirkan dalam demo ini:",

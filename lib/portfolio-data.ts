@@ -151,15 +151,15 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "custom-erp-supply-chain",
     title: "Custom ERP & Supply Chain",
-    client: "PT Lintas Samudera Jaya Express (LSJ)",
+    client: "Abizar Logistik",
     category: "Enterprise System & Operations",
     year: "2026",
     tagline: "Sistem manajemen sumber daya perusahaan terpadu untuk efisiensi inventaris, alur kerja operasional, dan otomatisasi laporan keuangan.",
-    image: "/asset-porto/Gemini_Generated_Image_onf9fuonf9fuonf9.jpg",
+    image: "/asset-porto/Gemini_Generated_Image_s8jg06s8jg06s8jg.jpg",
     tags: ["Enterprise ERP", "Inventory Control", "Financial Reports", "Role Management"],
     projectStatus: "Proyek Klien (Real Case)",
     sidebar: {
-      clientDetail: "PT Lintas Samudera Jaya Express (LSJ)",
+      clientDetail: "Abizar Logistik",
       location: "Surabaya & Jakarta",
       categoryDetail: "Sistem Informasi Manajemen Operasional & Logistik Ekspedisi",
       positioning: "Efisiensi Operasional Terpusat & Real-time Analytics",
@@ -206,7 +206,7 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Logistics & Fleet Management",
     year: "2026",
     tagline: "Landing page interaktif & portal pelacakan armada pengiriman barang real-time dengan kalkulator tarif otomatis.",
-    image: "/asset-porto/Gemini_Generated_Image_onf9fuonf9fuonf9.jpg",
+    image: "/asset-porto/Gemini_Generated_Image_s8jg06s8jg06s8jg.jpg",
     tags: ["Real-time Tracking", "Rate Calculator", "Fleet Management", "Interactive Map"],
     projectStatus: "Demo Konsep",
     demoUrl: "https://delicate-panda-55fe47.netlify.app/",
@@ -235,7 +235,7 @@ export const portfolioProjects: PortfolioProject[] = [
     },
     showcase: {
       caption: "Showcase antarmuka pelacakan kargo udara & laut beserta fitur kalkulator estimasi biaya.",
-      image: "/asset-porto/Gemini_Generated_Image_onf9fuonf9fuonf9.jpg",
+      image: "/asset-porto/Gemini_Generated_Image_s8jg06s8jg06s8jg.jpg",
     },
     scopeDemo: {
       overview: "Fitur yang dihadirkan dalam demo ini:",

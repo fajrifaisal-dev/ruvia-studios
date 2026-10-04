@@ -17,7 +17,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════
           SECTION 1: HERO SECTION — Premium Cinematic Dark SaaS
          ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden text-white min-h-[95vh] flex items-center" style={{ background: "#040811" }}>
+      <section className="relative overflow-hidden text-white min-h-[95vh] flex items-center" style={{ background: "#0e1427" }}>
         
         {/* ── Background Image Blended Naturally ── */}
         <div className="absolute inset-0 z-0 flex justify-end pointer-events-none">
@@ -31,9 +31,9 @@ export default function Home() {
               style={{ objectPosition: "center 75%" }}
             />
             {/* Gradient overlays to blend the image seamlessly into the dark background, but keep the laptop visible */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#040811] via-[#040811]/80 lg:via-[#040811]/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#040811] via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-l from-[#040811]/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0e1427] via-[#0e1427]/80 lg:via-[#0e1427]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0e1427] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-l from-[#0e1427]/10 to-transparent" />
           </div>
         </div>
 
@@ -132,7 +132,6 @@ export default function Home() {
                     Mulai Proyek <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </a>
-
                 <a
                   href="/portfolio"
                   style={{
@@ -633,9 +632,9 @@ export default function Home() {
 
 
       {/* ═══════════════════════════════════════════════════════════════
-          SECTION 8: MULAI SEKARANG (Bottom CTA - Dark Mode #0F172A)
+          SECTION 8: MULAI SEKARANG (Bottom CTA - Dark Mode #0e1427)
          ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-[#0F172A] text-white py-24 lg:py-32 text-center">
+      <section className="relative overflow-hidden bg-[#0e1427] text-white py-24 lg:py-32 text-center">
         {/* Glow & Diagonal Line Overlay */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#4F46E5] opacity-20 blur-[150px] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />

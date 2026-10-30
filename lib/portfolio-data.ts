@@ -38,6 +38,57 @@ export interface PortfolioProject {
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    slug: "kazi-nail-art",
+    title: "Kazi Nail Art",
+    client: "Kazi Nail Art Studio",
+    category: "Salon & Beauty Booking System",
+    year: "2026",
+    tagline: "Sistem manajemen reservasi dan pemetaan 15+ cabang untuk efisiensi operasional nail art studio.",
+    image: "/asset-porto/kazi-nail-outlet-locator.jpg",
+    tags: ["Outlet Locator", "Multi-Branch", "Booking Integration", "Clean UI"],
+    projectStatus: "Proyek Klien (Real Case)",
+    sidebar: {
+      clientDetail: "Kazi Nail Art",
+      location: "Surabaya, Malang, Sidoarjo (15+ Cabang)",
+      categoryDetail: "Nail Art & Beauty Studio",
+      positioning: "Solusi cepat dan nyaman untuk perawatan kuku",
+      techStack: ["Next.js", "Tailwind CSS", "Maps API", "WhatsApp API"],
+      tone: "Clean, Modern, Feminin, Trustworthy",
+    },
+    challenges: {
+      overview: "Punya banyak cabang adalah impian, tapi operasional Kazi Nail sempat menjadi mimpi buruk ketika mengandalkan admin manual:",
+      points: [
+        "Admin kewalahan membalas chat pelanggan yang terus-menerus menanyakan 'Cabang terdekat di mana?'.",
+        "Penumpukan antrian di satu cabang sementara cabang lain kosong karena sistem jadwal tidak tersentralisasi.",
+        "Pelanggan sering membatalkan janji karena lambatnya respon chat dari admin."
+      ],
+    },
+    solutions: {
+      overview: "Ruvia Studios merancang arsitektur website yang berfokus pada self-service pelanggan:",
+      points: [
+        "Outlet Locator Interaktif: Pelanggan bisa langsung melihat lokasi 15+ cabang terdekat dan detail alamatnya tanpa harus bertanya.",
+        "Reservasi Mandiri (Self-Booking): Alur booking yang jelas langsung diarahkan ke sistem reservasi per-cabang secara instan.",
+        "Desain UI/UX Clean & Profesional: Membangun trust dengan tampilan portofolio hasil nail art yang memikat dan loading super cepat."
+      ],
+    },
+    showcase: {
+      caption: "Tampilan antarmuka Outlet Locator Kazi Nail Art untuk memandu pelanggan mencari cabang terdekat.",
+      image: "/asset-porto/kazi-nail-outlet-locator.jpg",
+    },
+    scopeDemo: {
+      overview: "Ruang lingkup proyek yang dikerjakan:",
+      points: [
+        "Pengembangan front-end website responsif.",
+        "Sistem pemetaan cabang berbasis lokasi.",
+        "Integrasi tombol reservasi ke sistem existing."
+      ],
+      outOfScope: [
+        "Aplikasi mobile native (iOS/Android).",
+        "Sistem kasir (POS) di cabang."
+      ],
+    },
+  },
+  {
     slug: "hello-friday",
     title: "Hello Friday",
     client: "Hello Friday Studio",

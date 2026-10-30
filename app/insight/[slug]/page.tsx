@@ -155,7 +155,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--line)] text-xs font-semibold text-[var(--ink)] mb-6">
               {article.category}
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug text-[var(--ink)] mb-6 text-balance">
+            <h1 className="!text-3xl sm:!text-4xl lg:!text-5xl font-extrabold leading-tight text-[var(--ink)] mb-6 text-balance">
               {article.title}
             </h1>
             <div className="flex items-center justify-center gap-4 text-sm text-[var(--ink-muted)]">

@@ -77,15 +77,15 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-slate-300 hover:text-white transition-colors block"
                 >
-                  WhatsApp: +62 896-3387-3532
+                  WhatsApp: {site.whatsapp.display}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@ruviastudios.com"
+                  href={`mailto:${site.email}`}
                   className="text-slate-300 hover:text-white transition-colors block"
                 >
-                  hello@ruviastudios.com
+                  {site.email}
                 </a>
               </li>
               <li className="text-slate-500 text-xs pt-2">

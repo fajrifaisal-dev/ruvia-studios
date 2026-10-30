@@ -12,6 +12,58 @@ export interface InsightArticle {
 
 export const insights: InsightArticle[] = [
   {
+    slug: "sistem-ekspedisi-otomatis-hemat-biaya",
+    title: "Sering Telat Update Resi? Ini Cara Sistem Ekspedisi Menghemat Ratusan Juta Rupiah",
+    description: "Operasional logistik yang lambat sering kali karena sistem manual. Ketahui bagaimana otomasi manajemen armada & tracking resi menyelamatkan bisnis ekspedisi Anda.",
+    publishedAt: "2026-10-06",
+    updatedAt: "2026-10-06",
+    author: "Ruvia Studios",
+    category: "Otomatisasi Bisnis",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c80a30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    content: `
+<p>Dalam industri logistik dan ekspedisi, satu hari keterlambatan <em>update</em> status paket bisa berujung pada hilangnya kepercayaan ratusan pelanggan. Masalahnya, ketika skala pengiriman makin besar, sistem pencatatan manual via Excel atau WhatsApp sudah pasti akan "jebol".</p>
+<p>Inilah mengapa beralih ke <strong>Sistem Manajemen Ekspedisi Otomatis</strong> bukan lagi sekadar pilihan, melainkan keharusan untuk bertahan.</p>
+
+<h2>1. Tracking Resi Real-Time (Tanpa Perlu Ditanya)</h2>
+<p><em>"Min, paket saya sampai mana?"</em> adalah pertanyaan yang paling membuang waktu CS. Dengan <em>tracking portal</em>, pelanggan cukup memasukkan nomor resi, dan sistem akan menarik data lokasi armada (GPS) atau status pergudangan secara otomatis. Waktu CS Anda akhirnya bisa dialokasikan untuk menyelesaikan komplain serius, bukan sekadar cek status.</p>
+
+<h2>2. Perhitungan Tarif Bebas Error</h2>
+<p>Menghitung volume kargo, berat aktual, asuransi, dan rute secara manual rentan menimbulkan <em>human-error</em> (kebocoran dana). Sistem yang terintegrasi memungkinkan Anda memiliki <strong>Kalkulator Ongkir Dinamis</strong> yang menghitung biaya dalam satuan milidetik begitu data di-input.</p>
+
+<h2>3. Surat Jalan & Manifest Digital</h2>
+<p>Lupakan kertas <em>manifest</em> yang sering hilang di jalan. Dengan sistem terpusat, kurir atau supir cukup memindai <em>barcode</em> melalui HP mereka, dan otomatis <em>database</em> di pusat akan ter-update. Ini mencegah terjadinya barang hilang (susut) tanpa jejak.</p>
+
+<hr />
+<p>Skalabilitas bisnis logistik sangat bergantung pada seberapa kuat tulang punggung IT-nya. Ingin memodernisasi operasional logistik Anda? <a href="/contact">Mari jadwalkan diskusi sistem bersama Ruvia Studios.</a></p>
+    `,
+  },
+  {
+    slug: "solusi-booking-salon-kecantikan",
+    title: "Capek Atur Jadwal Manual? Ini Alasan Salon Anda Kehilangan Pelanggan Saat Weekend",
+    description: "Antrian berantakan, pelanggan marah karena double-booking, admin sibuk balas WA. Ini saatnya salon kecantikan Anda beralih ke sistem reservasi otomatis.",
+    publishedAt: "2026-10-05",
+    updatedAt: "2026-10-05",
+    author: "Ruvia Studios",
+    category: "Solusi Industri",
+    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    content: `
+<p>Weekend adalah "masa panen" bagi bisnis klinik kecantikan, <em>nail art</em>, maupun salon. Sayangnya, banyak pemilik bisnis justru stres saat weekend tiba karena <strong>sistem penjadwalan yang berantakan</strong>.</p>
+<p>Pernahkah admin Anda tidak sengaja mengiyakan 2 pelanggan di jam yang sama (<em>double booking</em>)? Atau pelanggan yang sudah <em>booking</em> ternyata tidak datang (<em>no-show</em>)? Inilah bahayanya mengandalkan chat manual.</p>
+
+<h2>1. Sistem Booking 24 Jam (Self-Service)</h2>
+<p>Dengan sistem reservasi berbasis website, pelanggan Anda bisa langsung memilih slot waktu kosong secara mandiri, meskipun saat itu jam 1 pagi. Sistem akan otomatis memblokir jam tersebut agar pelanggan lain tidak bisa memilihnya lagi. Tanpa campur tangan admin!</p>
+
+<h2>2. Sistem Deposit untuk Mengurangi "No-Show"</h2>
+<p>Banyak pelanggan nakal yang mem-<em>booking</em> tempat lalu tidak datang. Sistem website modern memungkinkan Anda menerapkan <strong>aturan deposit/DP (Down Payment)</strong> terintegrasi dengan Payment Gateway (seperti QRIS). Jika tidak bayar DP dalam 1 jam, reservasi otomatis batal.</p>
+
+<h2>3. Pengingat Jadwal (Automated Reminder)</h2>
+<p>Alih-alih menyuruh admin mem-*follow-up* jadwal besok, sistem akan mengirimkan notifikasi otomatis via WhatsApp atau Email kepada pelanggan (misal: H-1 sebelum jadwal <em>treatment</em>).</p>
+
+<hr />
+<p>Kenyamanan pelanggan berawal dari kemudahan mereka membuat janji. Jangan biarkan salon Anda kalah saing karena operasional yang usang. <a href="/contact">Ruvia Studios siap merancang sistem booking elegan untuk bisnis Anda!</a></p>
+    `,
+  },
+  {
     slug: "efisiensi-website-vs-chat",
     title: "Admin Anda Kewalahan Balas Chat WhatsApp? Ini Cara Website Menghemat Ratusan Jam Kerja",
     description: "Sering merasa waktu habis cuma buat balas chat 'Kak, harganya berapa?' atau 'Lokasi di mana?'. Bayangkan kalau semua info itu sudah ada di website. Customer tinggal baca, admin tinggal proses order.",

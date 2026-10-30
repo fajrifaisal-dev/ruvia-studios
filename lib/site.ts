@@ -2,12 +2,18 @@ export const site = {
   name: "Ruvia Studios",
   tagline: "Digital solutions for growing businesses.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ruviastudios.site",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@ruviastudios.com",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "helloruviastudio.site@gmail.com",
   whatsapp: {
     number: "6289639873022",
-    display: "+62 896-3987-3022",
+    display: "0896-3987-3022",
     defaultMessage:
-      "Hi Ruvia Studios, I'd like to discuss a project. Here is a short brief:",
+      "Halo Ruvia Studio, saya tertarik untuk konsultasi layanan pembuatan website & sistem.",
+    consultant: {
+      name: "Faisal Fajri",
+      role: "Founder • Ruvia Studio",
+      avatar: "/brand/avatar-consultant.png",
+      status: "Online • balas cepat",
+    },
   },
   showStreetAddress: true,
   locations: [

@@ -28,6 +28,10 @@ export interface PortfolioProject {
     caption: string;
     image: string;
   };
+  gallery?: {
+    image: string;
+    caption: string;
+  }[];
   demoUrl?: string;
   scopeDemo: {
     overview: string;
@@ -37,6 +41,74 @@ export interface PortfolioProject {
 }
 
 export const portfolioProjects: PortfolioProject[] = [
+  {
+    slug: "ikk-properti",
+    title: "IKK Properti (Griya IKK)",
+    client: "PT Insan Kapuas Khatulistiwa",
+    category: "Property Catalog & Booking System",
+    year: "2026",
+    tagline: "Sistem katalog properti modern dan platform reservasi kunjungan survey rumah subsidi KPR FLPP di Kalimantan Barat.",
+    image: "/asset-porto/45afd7e7-0586-4a4e-a603-041b75138a2a.jpg",
+    tags: ["Katalog Properti", "Booking Kunjungan", "KPR FLPP", "Inertia + Vue 3"],
+    projectStatus: "Proyek Klien (Real Case)",
+    sidebar: {
+      clientDetail: "PT Insan Kapuas Khatulistiwa",
+      location: "Pontianak & Kubu Raya, Kalimantan Barat",
+      categoryDetail: "Platform Katalog Properti & Sistem Reservasi Survei Lapangan",
+      positioning: "Solusi Properti Terpercaya untuk Hunian Subsidi Berkualitas",
+      techStack: ["Laravel", "Inertia.js", "Vue 3", "Tailwind CSS", "MySQL"],
+      tone: "Elegan, Profesional, Terpercaya, Corporate Real Estate",
+    },
+    challenges: {
+      overview: "PT Insan Kapuas Khatulistiwa melayani permintaan rumah subsidi KPR FLPP yang tinggi di Kalimantan Barat, namun sistem pemasaran dan operasional sebelumnya memiliki sejumlah kendala:",
+      points: [
+        "Calon pembeli sering menanyakan spesifikasi detail unit (tipe rumah, luas tanah/bangunan, estimasi cicilan per bulan) berulang kali via WhatsApp admin.",
+        "Penjadwalan survey kunjungan lokasi ke perumahan sering bentrok atau tidak tercatat rapi karena mengandalkan catatan chat manual.",
+        "Calon pembeli yang sudah mengajukan booking kunjungan kesulitan mengetahui status konfirmasi jadwal survei mereka.",
+        "Kurangnya media digital resmi terpusat untuk menampilkan legalitas perizinan (IMB, SHM) dan kepastian skema subsidi pemerintah.",
+      ],
+    },
+    solutions: {
+      overview: "Ruvia Studios merancang platform web katalog properti komprehensif terintegrasi sistem reservasi mandiri (self-service booking):",
+      points: [
+        "Katalog Unit Interaktif: Menampilkan etalase Tipe 36 dan Tipe 46/40 dengan spesifikasi lengkap (kamar tidur, kamar mandi, luas tanah, estimasi cicilan Rp 900rb - 1,1jt/bln) dan keunggulan sertifikasi SHM.",
+        "Fitur Booking Kunjungan Mandiri: Form reservasi online yang memungkinkan calon pembeli menentukan jadwal survey lokasi secara mandiri kapan saja.",
+        "Pelacak Status Booking Real-time: Portal cek tiket booking tanpa harus login sehingga calon pembeli bisa memantau apakah jadwal survei mereka sedang menunggu konfirmasi, disetujui, atau dijadwalkan ulang.",
+        "Desain UI Nuansa Corporate & Trustworthy: Palet warna navy (#0B1F4A) dipadu aksen gold (#C9A84C) yang memperkuat citra profesional dan kredibilitas developer properti.",
+      ],
+    },
+    showcase: {
+      caption: "Halaman landing page interaktif IKK Properti dengan katalog unit tipe rumah dan sistem reservasi booking.",
+      image: "/asset-porto/ikk-properti-hero.jpeg",
+    },
+    gallery: [
+      {
+        image: "/asset-porto/ikk-properti-catalog.jpeg",
+        caption: "Etalase katalog properti interaktif dengan kalkulasi estimasi cicilan KPR FLPP.",
+      },
+      {
+        image: "/asset-porto/ikk-properti-detail.jpeg",
+        caption: "Detail spesifikasi unit (kamar, luas tanah, fasilitas listrik/PDAM/SHM) dan alur layanan.",
+      },
+      {
+        image: "/asset-porto/ikk-properti-booking.jpeg",
+        caption: "Modul pelacak status booking mandiri (Cek Status Booking tanpa perlu login).",
+      },
+    ],
+    scopeDemo: {
+      overview: "Ruang lingkup sistem yang dikembangkan pada proyek ini meliputi:",
+      points: [
+        "Front-end modern responsif berbasis Inertia.js dan Vue 3 dengan animasi transisi yang halus.",
+        "Katalog unit properti dinamis lengkap dengan rincian spesifikasi teknis dan fasilitas hunian.",
+        "Sistem formulir pengajuan booking kunjungan/survei lokasi interaktif.",
+        "Modul verifikasi status booking publik secara real-time via kode booking.",
+      ],
+      outOfScope: [
+        "Pengajuan akad kredit KPR perbankan secara online end-to-end (tetap diproses via bank penyalur FLPP).",
+        "Sistem transaksi pembayaran booking fee payment gateway pihak ketiga.",
+      ],
+    },
+  },
   {
     slug: "kazi-nail-art",
     title: "Kazi Nail Art",

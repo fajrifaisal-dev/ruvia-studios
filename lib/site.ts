@@ -11,7 +11,7 @@ export const site = {
     consultant: {
       name: "Faisal Fajri",
       role: "Founder • Ruvia Studio",
-      avatar: "/brand/avatar-consultant.png",
+      avatar: "",
       status: "Online • balas cepat",
     },
   },

@@ -246,6 +246,24 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                   />
                 </div>
                 <p className="text-xs text-gray-400 italic text-center pt-2">{project.showcase.caption}</p>
+
+                {/* Optional Gallery Showcase if present */}
+                {project.gallery && project.gallery.length > 0 && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+                    {project.gallery.map((item, idx) => (
+                      <div key={idx} className="space-y-2">
+                        <div className="rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-black/30 group">
+                          <img
+                            src={item.image}
+                            alt={`${project.title} gallery preview ${idx + 1}`}
+                            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                        <p className="text-xs text-gray-400 italic">{item.caption}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
             </Reveal>
 
